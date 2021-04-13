@@ -67,10 +67,10 @@ if(isset($_POST["submit"])){
     semail=$semail,
     sloc=$sloc,
     price=$price,
-    addDetails=$adDetails WHERE vId=42';
+    addDetails=$adDetails WHERE vId=$vid';
 
     if($conn->query($sql)===TRUE){
-        echo "Vehicle information stored successfully";
+        echo "Vehicle information updated successfully";
     }else{
         echo "Error: ".$sql."<br>".$conn->error;
     }
@@ -262,10 +262,10 @@ if(isset($_POST["submit"])){
                             </td>
                             <td><label>Name: </label>
                                 <?php
-                                        $query1 = 'SELECT sname FROM vehicle WHERE vId=42';
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
+                                    $query1 = 'SELECT sname FROM vehicle WHERE vId=42';
+                                    $get1 = $conn->query($query1);
+                                    $option1 = '';
+                                    while ($rows1 = $get1->fetch_assoc()) {?>
                                 <input type="text" name="sname" id="sname" value="<?php echo $rows1['sname']; ?>" />
 
                                 <?php }?>

@@ -11,7 +11,7 @@
     text-align: center;
 }
 input, select{
-    width: 100%;
+    width: 100%;    
 }
 #active{
     color: rgb(4, 151, 151);
@@ -40,9 +40,12 @@ textarea {
   output{
       display: inline;/**/
   }
-
+/*
  img{
     height: 100px;
     margin: 10px;
     width: 180px;
+ }*/
+ input,select,label,h2,h4{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }

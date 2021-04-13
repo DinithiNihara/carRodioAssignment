@@ -37,8 +37,8 @@ if(isset($_POST["deladv"])){
 
     <!-- Bootstrap CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="../css/sellpg.css" rel="stylesheet">
+    
+    <link  href="../css/sellpg.css" rel="stylesheet">
 
     <title>Sell Home Page</title>
 
@@ -72,12 +72,12 @@ if(isset($_POST["deladv"])){
 
     <body>
 
-        <!-- Header -->
-        <header class="">
+    <!-- Header -->
+        <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <!-- Logo -->
-                    <a class="navbar-brand" href="../homepg.php">
+                    <a class="navbar-brand" href="homepg.php">
                         <div class="logo">
                             <img class="logo" src="/carRodio/img/logow.png" alt="">
                         </div>
@@ -90,13 +90,9 @@ if(isset($_POST["deladv"])){
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../homepg.php">Home
-                                    <span class="sr-only"></span>
-                                </a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../homepg.php">Home</a></li>
 
-                            <li class="nav-item"><a class="nav-link" href="cars.html">Buy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../buy/buyhomepg.php">Buy</a></li>
 
                             <li class="nav-item active"><a class="nav-link" href="sellhomepg.php">Sell</a></li>
 
@@ -108,6 +104,7 @@ if(isset($_POST["deladv"])){
                 </div>
             </nav>
         </header>
+
 
 <div class="form">
     <form action="/carRodio/sell/sellhomepg.php" method="post">

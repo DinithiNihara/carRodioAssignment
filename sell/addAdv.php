@@ -27,6 +27,7 @@ if ($conn->connect_error) {
     <!-- Bootstrap CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="../css/homepg.css" rel="stylesheet">
     <link href="../css/sellpg.css" rel="stylesheet">
 
     <title>Home</title>

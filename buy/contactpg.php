@@ -9,6 +9,69 @@ $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+if(isset($_POST["contact"])){
+    //store posted values in the session variables
+    $_SESSION['manufacturer'] = $_POST['manufacturer'];
+    $_SESSION['sellerEmail'] = $_POST['sellerEmail'];
+    var_dump($_SESSION['manufacturer']);
+    var_dump($_SESSION['sellerEmail']);
+
+}
+if(isset($_POST["submit"])){
+
+    require_once ('Exception.php');
+    require_once ('class.phpmailer.php');
+    require_once ('class.smtp.php');
+    require_once ('PHPMailerAutoload.php');
+
+    $mail = new \PHPMailer\PHPMailer\PHPMailer();
+
+    $name = $_POST['nametxt'];
+    $location = $_POST['loctxt'];
+    $mobile = $_POST['mobtxt'];
+    $msg = $_POST['msgtxt'];
+    $email=$_POST["emailtxt"];
+
+    $mail->setFrom($_POST["emailtxt"], $name);
+    $mail->addAddress($_SESSION["sellerEmail"], "Recepient Name");
+    $mail->addReplyTo($_POST["emailtxt"], "Reply");
+    $mail->isHTML(true);
+
+    $mail->isSMTP(); // send as HTML
+    $mail->Host = "smtp.gmail.com"; // SMTP servers
+    $mail->SMTPAuth = true; // turn on SMTP authentication
+    $mail->Username = "niharaarts1@gmail.com"; // Your mail
+    $mail->Password = '3Dinithi3Nihara3'; // Your password mail
+    $mail->Port = 587; //specify SMTP Port
+    $mail->SMTPSecure = 'tls';   
+
+    $mail->Subject = "Form submission";
+    $mail->Body = $name . " from " . $location . " sent the following:" . "\n\n" . $msg;
+   
+        if(!$mail->send()) 
+        {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } 
+        else 
+        {
+            echo '<script>alert("Message has been sent successfully, seller will contact you shortly.")</script>';
+        }
+
+        $date=date("Y/m/d");
+
+        $sql ="INSERT INTO contacthistory(bname,bloc,bemail,bmob) VALUES 
+        ('$name','$location','$email','$mobile')";
+
+        if($conn->query($sql)===TRUE){
+           // echo "Buyer information stored successfully";
+        }else{
+            echo "Error: ".$sql."<br>".$conn->error;
+        }
+
+    // use header('Location: thank_you.php'); to redirect to another page.
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +91,7 @@ if ($conn->connect_error) {
 
     <link href="../css/contactpg.css" rel="stylesheet">
 
-    <title>Home</title>
+    <title>Contact Seller</title>
 
 
 </head>
@@ -40,7 +103,7 @@ if ($conn->connect_error) {
 
     </div>
     <div class="form">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="/carRodio/buy/contactpg.php" method="post">
             <table class="table">
                 <thead>
                     <h2>Contact The Seller</h2>

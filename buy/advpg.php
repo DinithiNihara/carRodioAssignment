@@ -28,14 +28,14 @@ if ($conn->connect_error) {
 
     <link href="../css/sellpg.css" rel="stylesheet">
 
-    <title>Home</title>
+    <title>Selected Advertisement</title>
 
 
 </head>
 
 <body>
     <div class="form">
-        <form action="/carRodio/buy/contactpg.php" method="post" enctype="multipart/form-data">
+        <form action="/carRodio/buy/contactpg.php" method="post">
             <table class="table">
                 <thead>
 
@@ -45,8 +45,13 @@ if ($conn->connect_error) {
                 $option1 = '';
                 while ($rows1 = $get1->fetch_assoc()) {?>
 
-                    <h2 class="title"><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
-                    <h4 class="title"><?php echo $rows1['modelYr']; ?></h4>
+                    <h2 class="title" ><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
+                    <h4 class="title" name="modelYr"><?php echo $rows1['modelYr']; ?></h4>
+
+                    <input type="hidden" name="manufacturer" id="con_content" 
+                    value="<?php echo $rows1['manufacturer']; ?>
+                    <?php echo $rows1['model'];?>
+                    <?php echo $rows1['modelYr']; ?>" />
 
                     <?php }?>
                     </h2>
@@ -298,7 +303,9 @@ if ($conn->connect_error) {
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
-                                <label type="text" name="semail" id="semail"><?php echo $rows1['semail']; ?></label>
+                                <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
+
+                                <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
 
                                 <?php }?>
 
@@ -325,7 +332,7 @@ if ($conn->connect_error) {
 
                             <td>
                                 <a href="carRodio/buy/contactpg.php"><input type="submit" value="Contact the seller"
-                                        name="submit" /></a>
+                                        name="contact" /></a>
                             </td>
                         </tr>
 
