@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
@@ -43,7 +43,7 @@ if ($conn->connect_error) {
                     <?php
                     $vId=$_REQUEST['vid'];
 
-                    $query1 = "SELECT * FROM vehicle WHERE vId=$vId";
+                    $query1 = "SELECT * FROM vehicle WHERE id=$vId";
                     $get1 = $conn->query($query1);
                     $option1 = '';
                     while ($rows1 = $get1->fetch_assoc()) {?>
@@ -74,7 +74,7 @@ if ($conn->connect_error) {
                         <tr>
                             <td>
                                 <?php
-                                        $query1 = "SELECT vCondition FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT vCondition FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                 
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -86,7 +86,7 @@ if ($conn->connect_error) {
                             </td>
                             <td>
                                 <?php
-                                        $query1 = "SELECT color FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT color FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                              
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -105,7 +105,7 @@ if ($conn->connect_error) {
                         <tr>
                             <td>
                                 <?php
-                                    $query1 = "SELECT bodyType FROM vehicle WHERE vId=$vId";
+                                    $query1 = "SELECT bodyType FROM vehicle WHERE id=$vId";
                                     $get1 = $conn->query($query1);
                                 
                                     while ($rows1 = $get1->fetch_assoc()) {?>
@@ -118,7 +118,7 @@ if ($conn->connect_error) {
                             </td>
                             <td>
                                 <?php
-                                    $query1 = "SELECT fuelType FROM vehicle WHERE vId=$vId";
+                                    $query1 = "SELECT fuelType FROM vehicle WHERE id=$vId";
                                     $get1 = $conn->query($query1);
                                 
                                     while ($rows1 = $get1->fetch_assoc()) {?>
@@ -136,7 +136,7 @@ if ($conn->connect_error) {
                         <tr>
                             <td>
                                 <?php
-                                            $query1 = "SELECT regYr FROM vehicle WHERE vId=$vId";
+                                            $query1 = "SELECT regYr FROM vehicle WHERE id=$vId";
                                             $get1 = $conn->query($query1);
                                          
                                             while ($rows1 = $get1->fetch_assoc()) {?>
@@ -159,7 +159,7 @@ if ($conn->connect_error) {
                             <td><label>Engine Capacity: </label></td>
                             <td>
                                 <?php
-                                            $query1 = "SELECT engCapacity FROM vehicle WHERE vId=$vId";
+                                            $query1 = "SELECT engCapacity FROM vehicle WHERE id=$vId";
                                             $get1 = $conn->query($query1);
                                         
                                             while ($rows1 = $get1->fetch_assoc()) {?>
@@ -174,7 +174,7 @@ if ($conn->connect_error) {
                             <td><label>Transmission: </label></td>
                             <td>
                                 <?php
-                                            $query1 = "SELECT transmission FROM vehicle WHERE vId=$vId";
+                                            $query1 = "SELECT transmission FROM vehicle WHERE id=$vId";
                                             $get1 = $conn->query($query1);
                                 
                                             while ($rows1 = $get1->fetch_assoc()) {?>
@@ -190,7 +190,7 @@ if ($conn->connect_error) {
                             <td><label>Mileage: </label></td>
                             <td>
                                 <?php
-                                        $query1 = "SELECT mileage FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT mileage FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -231,7 +231,7 @@ if ($conn->connect_error) {
                             <td><label>Price: </label></td>
                             <td>
                                 <?php
-                                    $query1 = "SELECT price FROM vehicle WHERE vId=$vId";
+                                    $query1 = "SELECT price FROM vehicle WHERE id=$vId";
                                     $get1 = $conn->query($query1);
                                     $option1 = '';
                                     while ($rows1 = $get1->fetch_assoc()) {?>
@@ -248,7 +248,7 @@ if ($conn->connect_error) {
                             <td><label>Additional Details: </label></td>
                             <td>
                                 <?php
-                                        $query1 = "SELECT addDetails FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT addDetails FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -273,7 +273,7 @@ if ($conn->connect_error) {
                             </td>
                             <td><label>Name: </label>
                                 <?php
-                                        $query1 = "SELECT sname FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT sname FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -287,7 +287,7 @@ if ($conn->connect_error) {
                             </td>
                             <td><label>Contact No: </label>
                                 <?php
-                                        $query1 = "SELECT scno FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT scno FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -302,7 +302,7 @@ if ($conn->connect_error) {
                             </td>
                             <td><label>Email: </label>
                                 <?php
-                                        $query1 = "SELECT semail FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT semail FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -319,7 +319,7 @@ if ($conn->connect_error) {
                             </td>
                             <td><label>Location: </label>
                                 <?php
-                                        $query1 = "SELECT sloc FROM vehicle WHERE vId=$vId";
+                                        $query1 = "SELECT sloc FROM vehicle WHERE id=$vId";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>

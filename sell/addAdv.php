@@ -4,7 +4,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {

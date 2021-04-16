@@ -99,7 +99,7 @@ $conn = getDBConnection();
                                 <select id="selected1" 
                                     onchange="document.getElementById('manu_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT manufacturer FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT manufacturer FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
@@ -111,7 +111,7 @@ $conn = getDBConnection();
 
                                     <?php
                                         $get = getResults('SELECT manuName FROM carmanufacturer 
-                                        WHERE manuName NOT IN(SELECT manufacturer FROM vehicle WHERE vId=42)');
+                                        WHERE manuName NOT IN(SELECT manufacturer FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                         <option value="<?php echo $rows['manuName']; ?>">
@@ -131,7 +131,7 @@ $conn = getDBConnection();
                                 <select id="selected2" 
                                     onchange="document.getElementById('mod_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT model FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT model FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -143,7 +143,7 @@ $conn = getDBConnection();
                                     <?php }?>
 
                                     <?php
-                                        $get = getResults('SELECT modName FROM carmodel WHERE modName NOT IN(SELECT model FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT modName FROM carmodel WHERE modName NOT IN(SELECT model FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['modName']; ?>"><?php echo $rows['modName']; ?>
@@ -156,7 +156,7 @@ $conn = getDBConnection();
                                 <select id="selected3" 
                                     onchange="document.getElementById('modYr_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT modelYr FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT modelYr FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -168,7 +168,7 @@ $conn = getDBConnection();
                                     <?php }?>
                                     
                                     <?php
-                                        $get = getResults('SELECT modYr FROM modelyear WHERE modYr NOT IN(SELECT modelYr FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT modYr FROM modelyear WHERE modYr NOT IN(SELECT modelYr FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['modYr']; ?>"><?php echo $rows['modYr']; ?>
@@ -193,7 +193,7 @@ $conn = getDBConnection();
                             <td><select id="selected4" 
                                     onchange="document.getElementById('con_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT vCondition FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT vCondition FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -204,7 +204,7 @@ $conn = getDBConnection();
                                     
                                     <?php }?>
                                     <?php
-                                        $get = getResults('SELECT conName FROM carcondition WHERE conName NOT IN(SELECT vCondition FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT conName FROM carcondition WHERE conName NOT IN(SELECT vCondition FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['conName']; ?>"><?php echo $rows['conName']; ?>
@@ -216,7 +216,7 @@ $conn = getDBConnection();
                             <td><select id="selected5" 
                                     onchange="document.getElementById('col_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT color FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT color FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -228,7 +228,7 @@ $conn = getDBConnection();
                                     <?php }?>
 
                                     <?php
-                                        $get = getResults('SELECT colName FROM carcolor WHERE colName NOT IN(SELECT color FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT colName FROM carcolor WHERE colName NOT IN(SELECT color FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['colName']; ?>"><?php echo $rows['colName']; ?>
@@ -246,7 +246,7 @@ $conn = getDBConnection();
                             <td><select id="selected6" 
                                     onchange="document.getElementById('bod_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT bodyType FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT bodyType FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -258,7 +258,7 @@ $conn = getDBConnection();
                                     <?php }?>
                                     
                                     <?php
-                                        $get = getResults('SELECT bodType FROM carbodytype WHERE bodType NOT IN(SELECT bodyType FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT bodType FROM carbodytype WHERE bodType NOT IN(SELECT bodyType FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['bodType']; ?>"><?php echo $rows['bodType']; ?>
@@ -270,7 +270,7 @@ $conn = getDBConnection();
                             <td><select id="selected7" 
                                     onchange="document.getElementById('fuel_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT fuelType FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT fuelType FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -282,7 +282,7 @@ $conn = getDBConnection();
                                     <?php }?>
 
                                     <?php
-                                        $get = getResults('SELECT fuelType FROM carfueltype WHERE fuelType NOT IN(SELECT fuelType FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT fuelType FROM carfueltype WHERE fuelType NOT IN(SELECT fuelType FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['fuelType']; ?>">
@@ -300,7 +300,7 @@ $conn = getDBConnection();
                             <td><select id="selected8" 
                                     onchange="document.getElementById('regYr_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT regYr FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT regYr FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -312,7 +312,7 @@ $conn = getDBConnection();
                                     <?php }?>
 
                                     <?php
-                                        $get = getResults('SELECT regYr FROM carregyear WHERE regYr NOT IN(SELECT regYr FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT regYr FROM carregyear WHERE regYr NOT IN(SELECT regYr FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['regYr']; ?>"><?php echo $rows['regYr']; ?>
@@ -336,7 +336,7 @@ $conn = getDBConnection();
                                 <select id="selected9" 
                                     onchange="document.getElementById('eng_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT engCapacity FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT engCapacity FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -348,7 +348,7 @@ $conn = getDBConnection();
                                     <?php }?>
                                     
                                     <?php
-                                        $get = getResults('SELECT engCapacity FROM carenginecapacity WHERE engCapacity NOT IN(SELECT engCapacity FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT engCapacity FROM carenginecapacity WHERE engCapacity NOT IN(SELECT engCapacity FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['engCapacity']; ?>">
@@ -365,7 +365,7 @@ $conn = getDBConnection();
                                 <select id="selected10" 
                                     onchange="document.getElementById('trans_content').value=this.options[this.selectedIndex].text">
                                     <?php
-                                        $query1 = 'SELECT transmission FROM vehicle WHERE vId=42';
+                                        $query1 = 'SELECT transmission FROM vehicle WHERE id=51';
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         var_dump($query1);
@@ -377,7 +377,7 @@ $conn = getDBConnection();
                                     <?php }?>
 
                                     <?php
-                                        $get = getResults('SELECT transName FROM cartransmission WHERE transName NOT IN(SELECT transmission FROM vehicle WHERE vId=42)');
+                                        $get = getResults('SELECT transName FROM cartransmission WHERE transName NOT IN(SELECT transmission FROM vehicle WHERE id=51)');
                                         $option = '';
                                         while ($rows = $get->fetch_assoc()) {?>
                                     <option value="<?php echo $rows['transName']; ?>">
@@ -392,7 +392,7 @@ $conn = getDBConnection();
                             <td><label>Mileage</label></td>
                             <td>
                                 <?php
-                                    $query1 = 'SELECT mileage FROM vehicle WHERE vId=42';
+                                    $query1 = 'SELECT mileage FROM vehicle WHERE id=51';
                                     $get1 = $conn->query($query1);
                                     $option1 = '';
                                     while ($rows1 = $get1->fetch_assoc()) {?>

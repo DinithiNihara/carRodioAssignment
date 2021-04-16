@@ -4,7 +4,7 @@ function getDBConnection(){
     $server="localhost";
     $user="root";
     $password="";
-    $dbname="carrodio";
+    $dbname="carrodio1";
 
     $conn = new mysqli($server,$user,$password,$dbname);
 

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
@@ -10,8 +10,41 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-?>
+if(isset($_POST["submit"])){
+    $sh = $_POST["search"];
+    $sql = $conn->prepare("SELECT * FROM vehicle WHERE manufacturer='$sh'");
+    if($sql->num_rows > 0){
+        while($row = $query->fetch_assoc()){
+        ?>
+        <br><br><br>
+        <table>
+               <tr>
+                  <th>Brand</th>
+                  <th>Model</th>
+                  <th>Location</th>
+                  <th>Condition</th>
+               </tr>
 
+               <tr>
+                  <td><?php echo $row['manufacturer']; ?></td>
+                  <td><?php echo $row['model']; ?></td>
+                  <td><?php echo $row['vcondition']; ?></td>
+                  <td><?php echo $row[' color']; ?></td>
+        </table>
+
+<?php
+        }
+    }
+
+        else{
+            echo "(<SCRIPT LANGUAGE='JavaScript'>
+            window.alert('Name Does not exist')
+            window.location.href='/carRodio/buy/buypg.php'</SCRIPT>)";
+        }
+}
+
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,20 +61,29 @@ if ($conn->connect_error) {
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../css/homepg.css" rel="stylesheet">
-    <link href="../css/contHistory.css" rel="stylesheet">
 
-    <title>Contact history of buyers</title>
+    <link href="../css/sellpg.css" rel="stylesheet">
+
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    </style>
+
+    <title>Search bar </title>
+
 
 </head>
 
 <body>
+
 
     <!-- Header -->
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand" href="homepg.php">
+                <a class="navbar-brand" href="../homepg.php">
                     <div class="logo">
                         <img class="logo" src="/carRodio/img/logow.png" alt="">
                     </div>
@@ -60,7 +102,7 @@ if ($conn->connect_error) {
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="../buy/buyhomepg.php">Buy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cars.html">Buy</a></li>
 
                         <li class="nav-item active"><a class="nav-link" href="sellhomepg.php">Sell</a></li>
 
@@ -73,57 +115,17 @@ if ($conn->connect_error) {
         </nav>
     </header>
 
-    <h2>Contact History</h2>
-
-    <div class="contacts">
-        <div>
-            <?php
-                $query1 = 'SELECT * FROM contacthistory ';
-                $get1 = $conn->query($query1);
-                $option1 = '';
-                while ($rows1 = $get1->fetch_assoc()) {?>
-            <table>
-                <tr>
-                    <td>
-                        <label name="name">Name:</label>
-                    </td>
-                    <td>
-                        <p name="nametxt" ><?php echo $rows1['bname']; ?></p>
-                    </td>
-                    <td class="time"><?php echo $rows1['date']; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label name="loc">Location:</label>
-                    </td>
-                    <td>
-                        <p name="loctxt" ><?php echo $rows1['bloc']; ?></p>
-                    </td>
-                    <td><p></p></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label name="email">Email:</label>
-                    </td>
-                    <td>
-                        <p name="emailtxt" ><?php echo $rows1['bemail']; ?></p>
-                    </td>
-                    <td><p></p></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label name="mob">Contact No:</label>
-                    </td>
-                    <td>
-                        <p name="mobtxt" ><?php echo $rows1['bmob']; ?></p>
-                    </td>
-                    <td><p></p></td>
-                </tr>
-                
-            </table>
-            <?php } ?>
-        </div>
+    <div class="form">
+        <form action="/carRodio/buy/buypg.php" method="post">
+            <label>Search</label>
+            <input type="text" name="search">
+            <br><br>
+            <input type="submit" name="submit">
+        </form>
     </div>
+
+
+
 </body>
 
 </html>

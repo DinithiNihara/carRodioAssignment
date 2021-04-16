@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 if(isset($_POST["deladv"])){
     
-    $sql ="DELETE FROM vehicle WHERE vId=1";
+    $sql ="DELETE FROM vehicle WHERE id=1";
 
     if($conn->query($sql)===TRUE){
         echo "Advetisement was deleted successfully";
@@ -128,13 +128,13 @@ if(isset($_POST["deladv"])){
 
                 <h4>Edit/ Delete Advertisements</h4><br>
                 <?php
-                $query1 = 'SELECT * FROM vehicle WHERE userEmail="niharaperera3@gmail.com" AND vId>47';
+                $query1 = 'SELECT * FROM vehicle ';
                 $get1 = $conn->query($query1)or die($conn->error);
                 while ($rows1 = $get1->fetch_assoc()) {?>
-                    <?php $vid= $rows1['vId']?>
+                    <?php $vid= $rows1['id']?>
                     <table>
                         <tr>
-                            <td>
+                            <td style="padding-left:150px">
                                 <div class="cards">
                                     <div class="card">
 
@@ -171,18 +171,18 @@ if(isset($_POST["deladv"])){
                                             </a>
                                         </div>
                                         <?php
-                                        $query1 = "SELECT * FROM vehicle WHERE vId='$vid'";
+                                        $query1 = "SELECT * FROM vehicle WHERE id='$vid'";
                                         $get1 = $conn->query($query1);
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
-                                            <a href="../buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                                            <a href="../buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b>
                                                 </h4>
                                                 <p><?php echo $rows1['modelYr']; ?></p>
                                             </a>
                                         <?php }?>
                             </td>
-                            <td>
+                            <td style="padding-left:50px">
                                 <a href="updateAdv.php">
                                     <input type="button" value=" Update advertisement " name="upadv" />
                                 </a>

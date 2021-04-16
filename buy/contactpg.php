@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
@@ -160,7 +160,7 @@ if(isset($_POST["submit"])){
                     <tr>
 
                         <td>
-                            <a href="advpg.php"><input type="button" value="Cancel" name="cancel" /></a>
+                            <a href="../homepg.php"><input type="button" value="Cancel" name="cancel" /></a>
                         </td>
                         <td>
                             <a><input type="submit" value="Send" name="submit" /></a>

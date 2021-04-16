@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
@@ -43,9 +43,7 @@ if(isset($_POST["submit"])){
     $sloc=$_POST["sloc"];
     $price =$_POST["price"];
     $adDetails =$_POST["adDetails"];
-    var_dump ($_SESSION['manu_content'],$mod_content,$modYr_content,$con_content,$col_content,$bod_content,
-    $fuel_content,$regYr_content,$eng_content,$trans_content,$mil_content,$sname,
-    $scno,$semail,$sloc,$price,$adDetails);
+    
 
     $sql ="INSERT INTO vehicle(manufacturer,model,modelYr,vCondition,color,bodyType,fuelType,
     regYr,engCapacity,transmission,mileage,sname,scno,semail,sloc,price,addDetails) VALUES 
@@ -77,7 +75,7 @@ if(isset($_POST["submit"])){
                  // Upload file to server 
                  if(move_uploaded_file($_FILES["files"]["tmp_name"][$key], $targetFilePath)){ 
                      
-                     $sql2="SELECT MAX(vId) FROM vehicle";
+                     $sql2="SELECT MAX(id) FROM vehicle";
                      $result= $conn->query($sql2);
                      $vehicleid = $result->fetch_assoc();
                      $vid= implode(" ",$vehicleid);
@@ -98,7 +96,7 @@ if(isset($_POST["submit"])){
          if(!empty($insertValuesSQL)){ 
              $insertValuesSQL = trim($insertValuesSQL, ','); 
              // Insert image file name into database 
-             $insert = $conn->query("INSERT INTO carimages (fileName, uploadedOn,vehicleId) VALUES $insertValuesSQL"); 
+             $insert = $conn->query("INSERT INTO carimages (fileName,uploadedOn,vehicleId) VALUES $insertValuesSQL"); 
              if($insert){ 
                  $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
                  $errorUploadType = !empty($errorUploadType)?'File Type Error: '.trim($errorUploadType, ' | '):''; 

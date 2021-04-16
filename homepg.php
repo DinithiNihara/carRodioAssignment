@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $user = "root";
 $password = "";
-$dbname = "carrodio";
+$dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
@@ -66,7 +66,7 @@ if ($conn->connect_error) {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active"><a class="nav-link" href="homepg.php">Home</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="buy/buyhomepg.php">Buy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buy/buypg.php">Buy</a></li>
 
                         <li class="nav-item"><a class="nav-link" href="sell/sellhomepg.php">Sell</a></li>
 
@@ -134,11 +134,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=48';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=48';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -178,11 +178,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=45';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=45';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -222,11 +222,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=46';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=46';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -267,11 +267,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=47';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=47';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -309,11 +309,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=49';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=49';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -352,11 +352,11 @@ if ($conn->connect_error) {
                             </a>
                     </div>
                     <?php
-                        $query1 = 'SELECT * FROM vehicle WHERE vId=50';
+                        $query1 = 'SELECT * FROM vehicle WHERE id=50';
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['id'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
