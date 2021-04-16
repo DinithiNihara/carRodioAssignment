@@ -1,6 +1,4 @@
-
-  body {
-    
+body {  
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -20,7 +18,6 @@ div .logo{
 	margin: 0;
 	list-style: none;
 }
-
 
 /* Header Style */
 header {
@@ -97,7 +94,7 @@ header .navbar {
 	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.5px;
-	color: #fff;
+	color: #ffffff;
 	transition: all 0.5s;
 }
 .navbar .navbar-nav .nav-link:hover,
@@ -106,14 +103,14 @@ header .navbar {
 .navbar .navbar-nav .nav-link.show,
 .navbar .navbar-nav .show>.nav-link {
 	color: #ffffff;
-	padding-bottom: 20px;
-	border-bottom: 4px solid #09e2d7;
+	padding-bottom: 18px;
+	border-bottom: 5px solid #0ab9b1;
 }
 .navbar .navbar-toggler-icon {
 	background-image: none;
 }
 .navbar .navbar-toggler {
-	border-color: rgba(255, 255, 255, 0.308);
+	border-color: rgba(255, 255, 255, 0.281);
 	background-color: #fff;	
 	height: 36px;
 	outline: none;
@@ -129,6 +126,26 @@ header .navbar {
 	line-height: 26px;
 	font-family: 'FontAwesome';
 }
+.signin img{
+	float: 	right;
+	margin-top: -3px;
+	margin-right: -50px ;
+	width: 40px;
+	height: 40px;
+}
+.signin p{
+	float: 	right;
+	margin-top: 40px;
+	margin-right: -50px ;
+	font-size: 14px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #dadada;
+	font-weight: bold;
+}
+.signin p:hover{
+	color: #f7f7f7;
+}
+
 
 /*Slideshow CSS*/
 .section{
@@ -169,8 +186,6 @@ table{
 	animation: imageAnimation 30s linear infinite 0s; 
   }
   
-  
-  
   .slideshow li:nth-child(1) span { 
 	  background-image: url("../img/car1.jpg"); 
   }
@@ -190,7 +205,6 @@ table{
 	  background-image: url("../img/car5.jpg");
 	  animation-delay: 24s; 
   }
-  
   
   
   @keyframes imageAnimation { 
@@ -275,7 +289,11 @@ table{
   /*image slideshow in card view*/
 
   * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
+body {
+	font-family: Verdana, sans-serif; 
+	margin:0;
+	background-color: #c2c1c1;
+}
 
 .mySlides {display: none}
 img {vertical-align: middle}
@@ -314,9 +332,6 @@ img {vertical-align: middle}
 	background-color: rgba(0,0,0,0.8);
   }
   
-  .active {
-	background-color: #717171;
-  }
   
   /* Fading animation */
   .fade {

@@ -14,8 +14,6 @@ if(isset($_POST["contact"])){
     //store posted values in the session variables
     $_SESSION['manufacturer'] = $_POST['manufacturer'];
     $_SESSION['sellerEmail'] = $_POST['sellerEmail'];
-    var_dump($_SESSION['manufacturer']);
-    var_dump($_SESSION['sellerEmail']);
 
 }
 if(isset($_POST["submit"])){

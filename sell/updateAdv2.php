@@ -50,24 +50,24 @@ if(isset($_POST["submit"])){
     $fuel_content,$regYr_content,$eng_content,$trans_content,$mil_content,$sname,
     $scno,$semail,$sloc,$price,$adDetails);
 
-    $sql ='UPDATE vehicle SET 
-    manufacturer= $manu_content,
-    model=$mod_content,
-    modelYr=$modYr_content,
-    vCondition=$con_content,
-    color=$col_content,
-    bodyType=$bod_content,
-    fuelType=$fuel_content,
-    regYr=$regYr_content,
-    engCapacity=$eng_content,
-    transmission=$trans_content,
-    mileage=$mil_content,
-    sname=$sname,
-    scno=$scno,
-    semail=$semail,
-    sloc=$sloc,
-    price=$price,
-    addDetails=$adDetails WHERE vId=$vid';
+    $sql ="UPDATE vehicle SET 
+    manufacturer='$manu_content',
+    model='$mod_content',
+    modelYr='$modYr_content',
+    vCondition='$con_content',
+    color='$col_content',
+    bodyType='$bod_content',
+    fuelType='$fuel_content',
+    regYr='$regYr_content',
+    engCapacity='$eng_content',
+    transmission='$trans_content',
+    mileage='$mil_content',
+    sname='$sname',
+    scno='$scno',
+    semail='$semail',
+    sloc='$sloc',
+    price='$price',
+    addDetails='$adDetails' WHERE vId=42"; /**/ 
 
     if($conn->query($sql)===TRUE){
         echo "Vehicle information updated successfully";
@@ -97,12 +97,10 @@ if(isset($_POST["submit"])){
                      $result= $conn->query($sql2);
                      $vehicleid = $result->fetch_assoc();
                      $vid= implode(" ",$vehicleid);
-
-                        
+        
                      // Image db insert sql 
-                     $insertValuesSQL .= "('".$fileName."', NOW(),'".$vid."'),"; 
-                    
-                     
+                    // $insertValuesSQL .= "('".$fileName."', NOW(),'".$vid."'),"; 
+                                       
                  }else{ 
                      $errorUpload .= $_FILES['files']['name'][$key].' | '; 
                  } 
@@ -114,7 +112,7 @@ if(isset($_POST["submit"])){
          if(!empty($insertValuesSQL)){ 
              $insertValuesSQL = trim($insertValuesSQL, ','); 
              // Insert image file name into database 
-             $insert = $conn->query("INSERT INTO carimages (fileName, uploadedOn,vehicleId) VALUES $insertValuesSQL"); 
+             $insert = $conn->query("UPDATE carimages SET fileName='$fileName', uploadedOn='NOW()' WHERE vehicleId=42"); 
              if($insert){ 
                  $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
                  $errorUploadType = !empty($errorUploadType)?'File Type Error: '.trim($errorUploadType, ' | '):''; 
@@ -153,6 +151,7 @@ if(isset($_POST["submit"])){
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../css/sellpg.css" rel="stylesheet">
+    <link href="../css/homepg.css" rel="stylesheet">
 
     <title>Update Advertisement - Form 2</title>
 
@@ -345,7 +344,7 @@ if(isset($_POST["submit"])){
                                         $option1 = '';
                                         while ($rows1 = $get1->fetch_assoc()) {?>
                                 <textarea rows="5" name="adDetails" id="adDetails">
-                                        <?php echo $rows1['addDetails']; ?>"></textarea>
+                                        <?php echo $rows1['addDetails']; ?></textarea>
 
                                 <?php }?>
 

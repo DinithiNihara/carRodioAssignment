@@ -1,21 +1,33 @@
+body {
+	margin:0;
+	background-color: #c2c1c1;
+}
 .form{
     margin-top: 150px;
     margin-left: 20%;
     margin-right: 20%;
 }
 .table{
-    padding-left: 2px;
-    border: white;
+    padding-left: 2px;    
+}
+tr{
+    border: #c2c1c1 1px;
 }
 .title{
     text-align: center;
 }
 input, select{
     width: 100%;    
+    font-size: 18px;
+}
+label{
+    font-size: 18px;
 }
 #active{
-    color: rgb(4, 151, 151);
-    background: rgb(211, 206, 206);
+    color: rgb(5, 141, 141);
+    background: rgba(15, 15, 15, 0.158);
+    padding: 8px;
+    border-radius: 18px;
 }
 textarea {
     -webkit-box-sizing: border-box;
@@ -48,4 +60,13 @@ textarea {
  }*/
  input,select,label,h2,h4{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+ }
+
+ p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    
  }

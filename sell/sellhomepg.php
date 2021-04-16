@@ -37,8 +37,10 @@ if(isset($_POST["deladv"])){
 
     <!-- Bootstrap CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link  href="../css/sellpg.css" rel="stylesheet">
+
+    <link href="../css/homepg.css" rel="stylesheet">
+
+    <link href="../css/sellpg.css" rel="stylesheet">
 
     <title>Sell Home Page</title>
 
@@ -72,7 +74,7 @@ if(isset($_POST["deladv"])){
 
     <body>
 
-    <!-- Header -->
+        <!-- Header -->
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -106,29 +108,106 @@ if(isset($_POST["deladv"])){
         </header>
 
 
-<div class="form">
-    <form action="/carRodio/sell/sellhomepg.php" method="post">
-        <a href="addAdv.php">
-            <input type="button" value=" Add advertisement " name="addadv" />
-        </a>
-        <br><br>
-        <a href="updateAdv.php">
-            <input type="button" value=" Update advertisement " name="upadv" />
-        </a>
-        <br><br>
-        <a href="sellhomepg.php">
-            <input type="submit" value=" Delete advertisement " name="deladv" />
-        </a>
-        <br><br>
-</form>
+        <div class="form">
+            <form action="/carRodio/sell/sellhomepg.php" method="post">
+
+                <h2>Sell My Car</h2><br>
+                <p>Ready to sell your car? carRodio.lk can help you get maximum value for your vehicle. With three
+                    options to choose from, selling a car has never been easier.</p>
+                <br>
+                <p>At carRodio.lk, you can sell your vehicle quickly by finding your best offer from a network of
+                    verified car buyers and dealers through our trusted partnership with Motorway, or part exchange your
+                    car with established dealers in your area. You can even advertise the sale of your vehicle for no
+                    cost at all using our free private listings.</p>
+                <br><br>
+
+                <a href="addAdv.php">
+                    <input type="button" value=" Add advertisement " name="addadv" />
+                </a>
+                <br><br><br>
+
+                <h4>Edit/ Delete Advertisements</h4><br>
+                <?php
+                $query1 = 'SELECT * FROM vehicle WHERE userEmail="niharaperera3@gmail.com" AND vId>47';
+                $get1 = $conn->query($query1)or die($conn->error);
+                while ($rows1 = $get1->fetch_assoc()) {?>
+                    <?php $vid= $rows1['vId']?>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+
+                                        <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel"
+                                            style="width:250px">
+                                            <div class="carousel-inner">
+                                                <?php
+                                                // Get images from the database
+                                                $query = $conn->query("SELECT * FROM carimages WHERE vehicleId='$vid'");
+
+                                                if($query->num_rows > 0){
+                                                    while($row = $query->fetch_assoc()){
+                                                    $imageURL = 'uploads/'.$row["fileName"];
+                                                    ?>
+
+                                                    <div class="carousel-item ss1">
+                                                    <img style="width:100%; height:100%" src="<?php echo $imageURL; ?>"
+                                                        alt="" class="image img-fluid" />
+                                                </div>
+                                                <?php }
+                                            
+                                                }else{ ?>
+                                                    <p>No image(s) found...</p>
+                                                    <?php } ?>
+
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls1" role="button"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls1" role="button"
+                                                data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            </a>
+                                        </div>
+                                        <?php
+                                        $query1 = "SELECT * FROM vehicle WHERE vId='$vid'";
+                                        $get1 = $conn->query($query1);
+                                        $option1 = '';
+                                        while ($rows1 = $get1->fetch_assoc()) {?>
+                                            <a href="../buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
+                                                <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b>
+                                                </h4>
+                                                <p><?php echo $rows1['modelYr']; ?></p>
+                                            </a>
+                                        <?php }?>
+                            </td>
+                            <td>
+                                <a href="updateAdv.php">
+                                    <input type="button" value=" Update advertisement " name="upadv" />
+                                </a>
+                                <br><br>
+                                <a href="sellhomepg.php">
+                                    <input type="submit" value=" Delete advertisement " name="deladv" />
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                <?php } ?>
+                <br><br><br>
+
+                <h4>View Contact History</h4><br>
+                <a href="/carRodio/sell/contHistorypg.php">
+                    <input type="button" value=" Contact History " name="contact" />
+                </a>
+                <br><br>
+            </form>
         </div>
+
+        <script>
+            document.getElementsByClassName("ss1")[0].classList.add("active");
+        </script>
 
     </body>
 
     </html>
-
-
-
-</body>
-
-</html>

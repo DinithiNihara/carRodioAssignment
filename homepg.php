@@ -64,11 +64,7 @@ if ($conn->connect_error) {
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="homepg.php">Home
-                                <span class="sr-only"></span>
-                            </a>
-                        </li>
+                        <li class="nav-item active"><a class="nav-link" href="homepg.php">Home</a></li>
 
                         <li class="nav-item"><a class="nav-link" href="buy/buyhomepg.php">Buy</a></li>
 
@@ -79,6 +75,13 @@ if ($conn->connect_error) {
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+                <!-- Sign in  -->
+                <a class="" href="/carRodio/login/login.php">
+                    <div class="signin">
+                        <img class="signin" src="/carRodio/img/signin.png" >
+                        <p>Sign in</p>
+                    </div>
+                </a>
             </div>
         </nav>
     </header>
@@ -135,7 +138,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -179,7 +182,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -223,7 +226,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -268,7 +271,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -288,10 +291,9 @@ if ($conn->connect_error) {
                                         while($row = $query->fetch_assoc()){
                                             $imageURL = 'sell/uploads/'.$row["fileName"];
                                             ?>
-
-                                                <div class="carousel-item ss5">
-                                                    <img style="width:100%; height:100%" src="<?php echo $imageURL; ?>" alt="" class="image img-fluid" />
-                                                </div>
+                                            <div class="carousel-item ss5">
+                                                <img style="width:100%; height:100%" src="<?php echo $imageURL; ?>" alt="" class="image img-fluid" />
+                                            </div>
                                 <?php }
                                         
                                     }else{ ?>
@@ -311,7 +313,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
@@ -354,7 +356,7 @@ if ($conn->connect_error) {
                         $get1 = $conn->query($query1);
                         $option1 = '';
                         while ($rows1 = $get1->fetch_assoc()) {?>
-                            <a href='buy/advpg.php'>
+                            <a href="buy/advpg.php?vid=<?php echo $rows1['vId'];?>">
                                 <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h4>
                                 <p><?php echo $rows1['modelYr']; ?></p>
                             </a>
