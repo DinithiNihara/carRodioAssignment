@@ -12,12 +12,12 @@ if ($conn->connect_error) {
 
 if(isset($_POST["submit"])){
     $sh = $_POST["search"];
-    $sql = $conn->prepare("SELECT * FROM vehicle WHERE manufacturer='$sh'");
+    $sql = $conn->query("SELECT * FROM vehicle WHERE manufacturer='$sh'");
     if($sql->num_rows > 0){
-        while($row = $query->fetch_assoc()){
+        while($row = $sql->fetch_assoc()){
         ?>
         <br><br><br>
-        <table>
+        <table class="result">
                <tr>
                   <th>Brand</th>
                   <th>Model</th>
@@ -28,8 +28,8 @@ if(isset($_POST["submit"])){
                <tr>
                   <td><?php echo $row['manufacturer']; ?></td>
                   <td><?php echo $row['model']; ?></td>
-                  <td><?php echo $row['vcondition']; ?></td>
-                  <td><?php echo $row[' color']; ?></td>
+                  <td><?php echo $row['sloc']; ?></td>
+                  <td><?php echo $row['vCondition']; ?></td>
         </table>
 
 <?php
@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
         else{
             echo "(<SCRIPT LANGUAGE='JavaScript'>
             window.alert('Name Does not exist')
-            window.location.href='/carRodio/buy/buypg.php'</SCRIPT>)";
+            window.location.href='/carRodioAssignment/buy/buypg.php'</SCRIPT>)";
         }
 }
 
@@ -61,7 +61,7 @@ if(isset($_POST["submit"])){
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../css/homepg.css" rel="stylesheet">
-
+    <link href="../css/search.css" rel="stylesheet">
     <link href="../css/sellpg.css" rel="stylesheet">
 
     <style>
@@ -85,7 +85,7 @@ if(isset($_POST["submit"])){
                 <!-- Logo -->
                 <a class="navbar-brand" href="../homepg.php">
                     <div class="logo">
-                        <img class="logo" src="/carRodio/img/logow.png" alt="">
+                        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
                     </div>
                 </a>
 
@@ -102,9 +102,9 @@ if(isset($_POST["submit"])){
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="cars.html">Buy</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="buypg.php">Buy</a></li>
 
-                        <li class="nav-item active"><a class="nav-link" href="sellhomepg.php">Sell</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../sell/sellhomepg.php">Sell</a></li>
 
                         <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
 
@@ -116,7 +116,7 @@ if(isset($_POST["submit"])){
     </header>
 
     <div class="form">
-        <form action="/carRodio/buy/buypg.php" method="post">
+        <form action="/carRodioAssignment/buy/buypg.php" method="post">
             <label>Search</label>
             <input type="text" name="search">
             <br><br>

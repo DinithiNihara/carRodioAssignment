@@ -7,6 +7,9 @@ body {
     margin-left: 20%;
     margin-right: 20%;
 }
+#form{
+    margin-top: 70px;
+}
 .table{
     padding-left: 2px;    
 }
@@ -15,6 +18,18 @@ tr{
 }
 .title{
     text-align: center;
+    padding-left: 30px;
+}
+#title{
+    padding-top: 80px;
+}
+.title_add{
+    text-align: left;
+    padding-left: 30px;
+}
+.mainslide{
+    width: 500px;
+    height: 250px;
 }
 input, select{
     width: 100%;    
@@ -48,16 +63,16 @@ textarea {
     margin: 10px;
     width: 180px;
   }
+  .thumbnail1 {
+    height: 80px;
+    margin: 1px;
+    width: 120px;
+  }
 
   output{
-      display: inline;/**/
+      display: inline;
   }
-/*
- img{
-    height: 100px;
-    margin: 10px;
-    width: 180px;
- }*/
+
  input,select,label,h2,h4{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
@@ -70,3 +85,6 @@ textarea {
     font-size: 17px;
     
  }
+ /* a>b{
+    font-size: 25px;
+} */

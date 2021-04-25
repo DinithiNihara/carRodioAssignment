@@ -1,5 +1,7 @@
 <?php
-include("../connection.php");
+require_once '../connection.php';
+$conn = getDBConnection();
+
 if(isset($_POST["name"])){
     $uname=$_POST["name"];
     $uaddress=$_POST["address"];
@@ -14,9 +16,9 @@ if(isset($_POST["name"])){
     if($conn->query($sql)===TRUE){
         echo "(<SCRIPT LANGUAGE='JavaScript'>
         window.alert('Thank you for visting Car Rodio. You have successfully registered as a member.')
-        window.location.href='/carRodio/login/login.php';
+        window.location.href='/carRodioAssignment/login/login.php';
         </SCRIPT>)";
-    //    header("location: /carRodio/login/login.php");
+    //    header("location: /carRodioAssignment/login/login.php");
     }else{
         echo "Error: ".$sql."<br>".$conn->error;
     }
@@ -44,19 +46,14 @@ if(isset($_POST["name"])){
 
    <div class="logo">
 
-        <img class="logo" src="/carRodio/img/logow.png" alt="">
+        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
 
    </div>
 
-   <!--<div class="main">
-
-        <img src="img/bg.png" alt="">
-
-   </div-->
 
    <div class="bg-img">
 
-    <form action="/carRodio/register/register.php" method="post" class="containers">
+    <form action="/carRodioAssignment/register/register.php" method="post" class="containers">
   
         <input type="text" placeholder="Name" name="name" required>
   

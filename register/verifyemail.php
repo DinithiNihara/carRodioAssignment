@@ -12,7 +12,7 @@ if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
     $server="localhost";
     $user="root";
     $password="";
-    $dbname="carrodio";
+    $dbname="carrodio1";
     
     $conn = new mysqli($server,$user,$password,$dbname);
     
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
     $mail->isHTML(true);
     $mail->Subject='Form Submission:';
     $code= rand(100,999);
-    $mail->Body="Your activation link is:http://localhost/carRodio/register/resetpwd.php?email=code=$code";
+    $mail->Body="Your activation link is:http://localhost/carRodioAssignment/register/resetpwd.php?email=code=$code";
    // mail($email, "Send Code", $message);
    
     if (mysqli_num_rows ($query)==1)
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
 
    <div class="logo">
 
-        <img class="logo" src="/carRodio/img/logow.png" alt="">
+        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
 
    </div>
 
@@ -98,7 +98,7 @@ if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
 
    <div class="bg-img">
 
-    <form action="/carRodio/register/verifyemail.php" method="POST" class="container">
+    <form action="/carRodioAssignment/register/verifyemail.php" method="POST" class="container">
 
         <h1>To continue, First verify it's you </h1>
 

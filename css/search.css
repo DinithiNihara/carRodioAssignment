@@ -1,0 +1,10 @@
+.result{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+td,th{
+    padding: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 17px;
+}

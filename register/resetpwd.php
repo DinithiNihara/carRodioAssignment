@@ -18,7 +18,7 @@ if(isset($_POST['npwd'])){
     if($conn->query($sql)===TRUE){
         echo "(<SCRIPT LANGUAGE='JavaScript'>
         window.alert('You have changed your password successfully.')
-        window.location.href='/carRodio/login/login.php';
+        window.location.href='/carRodioAssignment/login/login.php';
         </SCRIPT>)";
     }else{
         echo "Error: ".$sql."<br>".$conn->error;
@@ -50,7 +50,7 @@ else{
 
    <div class="logo">
 
-        <img class="logo" src="/carRodio/img/logow.png" alt="">
+        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
 
    </div>
 
@@ -62,7 +62,7 @@ else{
 
    <div class="bg-img">
 
-    <form action="/carRodio/register/resetpwd.php" method="POST" class="container">
+    <form action="/carRodioAssignment/register/resetpwd.php" method="POST" class="container">
 
         <input type="password" placeholder="New Password" name="npwd" required>
   

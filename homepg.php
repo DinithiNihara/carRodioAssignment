@@ -53,7 +53,7 @@ if ($conn->connect_error) {
                 <!-- Logo -->
                 <a class="navbar-brand" href="homepg.php">
                     <div class="logo">
-                        <img class="logo" src="/carRodio/img/logow.png" alt="">
+                        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
                     </div>
                 </a>
 
@@ -76,9 +76,9 @@ if ($conn->connect_error) {
                     </ul>
                 </div>
                 <!-- Sign in  -->
-                <a class="" href="/carRodio/login/login.php">
+                <a class="" href="/carRodioAssignment/login/login.php">
                     <div class="signin">
-                        <img class="signin" src="/carRodio/img/signin.png" >
+                        <img class="signin" src="/carRodioAssignment/img/signin.png" >
                         <p>Sign in</p>
                     </div>
                 </a>

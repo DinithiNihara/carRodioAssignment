@@ -52,7 +52,10 @@ if(isset($_POST["submit"])){
     '$scno','$semail','$sloc','$price','$adDetails')";
 
     if($conn->query($sql)===TRUE){
-        echo "Vehicle information stored successfully";
+        echo "(<SCRIPT LANGUAGE='JavaScript'>
+            window.alert('Vehicle information stored successfully.')
+            window.location.href='/carRodioAssignment/sell/sellhomepg.php';
+            </SCRIPT>)";
     }else{
         echo "Error: ".$sql."<br>".$conn->error;
     }
@@ -176,7 +179,7 @@ if(isset($_POST["submit"])){
                     <!-- Logo -->
                     <a class="navbar-brand" href="../homepg.php">
                         <div class="logo">
-                            <img class="logo" src="/carRodio/img/logow.png" alt="">
+                            <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
                         </div>
                     </a>
 
@@ -187,13 +190,9 @@ if(isset($_POST["submit"])){
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../homepg.php">Home
-                                    <span class="sr-only"></span>
-                                </a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../homepg.php">Home</a></li>
 
-                            <li class="nav-item"><a class="nav-link" href="cars.html">Buy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../buy/buypg.php">Buy</a></li>
 
                             <li class="nav-item active"><a class="nav-link" href="sellhomepg.php">Sell</a></li>
 
@@ -208,7 +207,7 @@ if(isset($_POST["submit"])){
         <!-- Form -->
    
             <div class="form">
-                <form action="/carRodio/sell/addAdv2.php" method="post" enctype="multipart/form-data">
+                <form action="/carRodioAssignment/sell/addAdv2.php" method="post" enctype="multipart/form-data">
                     <table class="table">
                         <thead>
                             <h2 class="title"><b>Add Advertisement</b></h2>

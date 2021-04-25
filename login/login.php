@@ -1,6 +1,7 @@
 <?php
 session_start();
-include("../connection.php");
+require_once '../connection.php';
+$conn = getDBConnection();
 
 if(isset($_SERVER['REQUEST_METHOD'])=="POST"
 && isset($_POST['eml']) && isset($_POST['pwd']))
@@ -25,7 +26,7 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
             $_SESSION['email']=$uemail;
             echo "(<SCRIPT LANGUAGE='JavaScript'>
             window.alert('You have successfully logged in.')
-            window.location.href='/carRodio/register/register.php';
+            window.location.href='/carRodioAssignment/sell/sellhomepg.php';
             </SCRIPT>)";
         die;
         }
@@ -58,7 +59,7 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
 
    <div class="logo">
 
-        <img class="logo" src="/carRodio/img/logow.png" alt="">
+        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
 
    </div>
 
@@ -70,7 +71,7 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
 
    <div class="bg-img">
 
-    <form action="/carRodio/login/login.php" method="post" class="container">
+    <form action="/carRodioAssignment/login/login.php" method="post" class="container">
 
         <input type="text" placeholder="Email Address" name="eml" required>
   
@@ -90,7 +91,7 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
             </div>
 
             <div>
-                <button type="submit" class="btn">Sign In</button>
+            <a href="../sell/sellhomepg.php"><input type="submit" class="btn" value="Sign In" name="email"/></a>
             </div>
             
         </div>

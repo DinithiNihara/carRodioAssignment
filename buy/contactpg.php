@@ -45,7 +45,7 @@ if(isset($_POST["submit"])){
     $mail->SMTPSecure = 'tls';   
 
     $mail->Subject = "Form submission";
-    $mail->Body = $name . " from " . $location . " sent the following:" . "\n\n" . $msg;
+    $mail->Body = $name . " from " . $location . " sent the following:" . "\n\n" . $msg. "\n\n mobile:".$mobile ."\n\n email:".$email;
    
         if(!$mail->send()) 
         {
@@ -97,11 +97,11 @@ if(isset($_POST["submit"])){
 <body>
     <div class="logo">
 
-        <img class="logo" src="/carRodio/img/logow.png" alt="">
+        <img class="logo" src="/carRodioAssignment/img/logow.png" alt="">
 
     </div>
     <div class="form">
-        <form action="/carRodio/buy/contactpg.php" method="post">
+        <form action="/carRodioAssignment/buy/contactpg.php" method="post">
             <table class="table">
                 <thead>
                     <h2>Contact The Seller</h2>
