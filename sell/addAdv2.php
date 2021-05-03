@@ -233,7 +233,7 @@ if(isset($_POST["submit"])){
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label for='files'>Select multiple files: </label>
+                                        <label for='files'>Upload images: <br> (Maximum 5 images in png/jpg/jpeg format) </label>
 
                                         <input id='files' type='file' name="files[]" multiple />
 
