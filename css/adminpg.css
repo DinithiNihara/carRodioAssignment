@@ -1,6 +1,6 @@
 body {
 	margin:0;
-	background-color: #c2c1c1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main{
@@ -26,54 +26,73 @@ body {
 }
 
 .button2 {
-  width: 300px;
+  width: 180px;
   display: block;
   float: right;
-  margin: 10px 20px;
-  padding: 5px 75px;
+  margin: 10px 10px;
+  /*padding: 5px 75px;*/
   text-align: center;
   font-size: 15px;
-  background-color: rgba(51, 2, 2, 0.418);
-    border: none;
-    color: white;
-    text-decoration: none;  
-    cursor: pointer;
+  background-color:  #1b2e35;
+  border: none;
+  color: white;
+  text-decoration: none;  
+  cursor: pointer;
+ 
 
 }
+.button2:hover{
+  background-color: #142227;
+}
+.main_table{
+  width: 100%;
+}
+.cardsAd{
+	display: inline;
+	
+}
+.cardAd {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.459);
+	transition: 0.3s;
+	border-radius: 10px;
+	background-color: #38525c;
+  width: 550px;
+  height: 350px;
+  padding: 1px;
+	
+  }
+
 .heading_verify{
   margin-top: 150px;
-  margin-left:50px;
+  margin-left:8%;
 }
 .add_container{
-  margin-top: 50px;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 30px;
-  margin-left: 100px;
+  grid-column-gap: 5px;
+  grid-row-gap: 60px;
+  margin-left: 8%;
 }
-
+.cardAd:hover{
+  box-shadow: 0 8px 16px 0 #030303bd;
+}
+/*
 .add_container> div {
-  padding: 10px;
+  padding: 5px;
   background-color:rgba(9, 66, 104, 0.171);
   width: 600px;
   height: 300px;
   font-size: 20px;
-}
-.add_text {
-position: relative;
-top: 175px;
-
-}
-
-
-
- p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    
- }
- /* a>b{
-    font-size: 25px;
 } */
+.add_text {
+  position: relative;
+  top: 175px;
+
+}
+ p{
+    font-size: 17px;   
+ }
+ 

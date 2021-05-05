@@ -113,7 +113,15 @@ textarea {
     border-radius: 5px;
     padding: 5px;
  }
-
+ .btn{
+    background-color:  #24444e;
+    color: white;
+    font-size: 18px;
+ }
+.btn:hover{
+  background-color: #1b333b;
+  color: white;
+}
  label{
      color: #f7f4f4;
  }
