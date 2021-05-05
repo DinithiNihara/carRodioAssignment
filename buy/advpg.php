@@ -78,9 +78,10 @@ if ($conn->connect_error) {
                     $get1 = $conn->query($query1);
                     $option1 = '';
                     while ($rows1 = $get1->fetch_assoc()) {?>
-
+                    <img id="wish_icon" src="/carRodioAssignment/img/wish.png"/>
                     <h2 class="title_add" id="title"><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
                     <h4 class="title_add" name="modelYr"><?php echo $rows1['modelYr']; ?></h4>
+                    
 
                     <input type="hidden" name="manufacturer" id="con_content" 
                     value="<?php echo $rows1['manufacturer']; ?>
@@ -88,7 +89,86 @@ if ($conn->connect_error) {
                     <?php echo $rows1['modelYr']; ?>" />
 
                     <?php }?>
+                    <div >
+                        <table class="seller">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <label class="title"><b>Seller Details:</b></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td><label>Name: </label>
+                                    <?php
+                                            $query1 = "SELECT sname FROM vehicle WHERE id=$vId";
+                                            $get1 = $conn->query($query1);
+                                            $option1 = '';
+                                            while ($rows1 = $get1->fetch_assoc()) {?>
+                                    <label type="text" name="sname" id="sname"><?php echo $rows1['sname']; ?></label>
 
+                                    <?php }?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td><label>Contact No: </label>
+                                    <?php
+                                            $query1 = "SELECT scno FROM vehicle WHERE id=$vId";
+                                            $get1 = $conn->query($query1);
+                                            $option1 = '';
+                                            while ($rows1 = $get1->fetch_assoc()) {?>
+                                    <label type="text" name="scno" id="scno"><?php echo $rows1['scno']; ?></label>
+
+                                    <?php }?>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td><label>Email: </label>
+                                    <?php
+                                            $query1 = "SELECT semail FROM vehicle WHERE id=$vId";
+                                            $get1 = $conn->query($query1);
+                                            $option1 = '';
+                                            while ($rows1 = $get1->fetch_assoc()) {?>
+                                    <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
+
+                                    <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
+
+                                    <?php }?>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td><label>Location: </label>
+                                    <?php
+                                            $query1 = "SELECT sloc FROM vehicle WHERE id=$vId";
+                                            $get1 = $conn->query($query1);
+                                            $option1 = '';
+                                            while ($rows1 = $get1->fetch_assoc()) {?>
+                                    <label type="text" name="sloc" id="sloc"><?php echo $rows1['sloc']; ?></label>
+
+                                    <?php }?>
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td><label> </label></td>
+
+                                <td>
+                                    <a href="carRodioAssignment/buy/contactpg.php"><input type="submit" value="Contact the seller"
+                                            name="contact" /></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
             
                             <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" style="width:250px">
                                 <div class="carousel-inner">
@@ -136,7 +216,7 @@ if ($conn->connect_error) {
                                         <p>No image(s) found...</p>
                                         <?php } ?>
 
-                            
+                                        
 
             <table class="table">       
                     <tbody>
@@ -317,83 +397,86 @@ if ($conn->connect_error) {
                         <tr>
                             <td><label> </label></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <label class="title"><b>Seller Details:</b></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td><label>Name: </label>
-                                <?php
-                                        $query1 = "SELECT sname FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <label type="text" name="sname" id="sname"><?php echo $rows1['sname']; ?></label>
+                        <!-- <div class="seller">
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <label class="title"><b>Seller Details:</b></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td><label>Name: </label>
+                                        <?php
+                                                $query1 = "SELECT sname FROM vehicle WHERE id=$vId";
+                                                $get1 = $conn->query($query1);
+                                                $option1 = '';
+                                                while ($rows1 = $get1->fetch_assoc()) {?>
+                                        <label type="text" name="sname" id="sname"><?php echo $rows1['sname']; ?></label>
 
-                                <?php }?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td><label>Contact No: </label>
-                                <?php
-                                        $query1 = "SELECT scno FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <label type="text" name="scno" id="scno"><?php echo $rows1['scno']; ?></label>
+                                        <?php }?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td><label>Contact No: </label>
+                                        <?php
+                                                $query1 = "SELECT scno FROM vehicle WHERE id=$vId";
+                                                $get1 = $conn->query($query1);
+                                                $option1 = '';
+                                                while ($rows1 = $get1->fetch_assoc()) {?>
+                                        <label type="text" name="scno" id="scno"><?php echo $rows1['scno']; ?></label>
 
-                                <?php }?>
+                                        <?php }?>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td><label>Email: </label>
-                                <?php
-                                        $query1 = "SELECT semail FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td><label>Email: </label>
+                                        <?php
+                                                $query1 = "SELECT semail FROM vehicle WHERE id=$vId";
+                                                $get1 = $conn->query($query1);
+                                                $option1 = '';
+                                                while ($rows1 = $get1->fetch_assoc()) {?>
+                                        <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
 
-                                <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
+                                        <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
 
-                                <?php }?>
+                                        <?php }?>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td><label>Location: </label>
-                                <?php
-                                        $query1 = "SELECT sloc FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <label type="text" name="sloc" id="sloc"><?php echo $rows1['sloc']; ?></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td><label>Location: </label>
+                                        <?php
+                                                $query1 = "SELECT sloc FROM vehicle WHERE id=$vId";
+                                                $get1 = $conn->query($query1);
+                                                $option1 = '';
+                                                while ($rows1 = $get1->fetch_assoc()) {?>
+                                        <label type="text" name="sloc" id="sloc"><?php echo $rows1['sloc']; ?></label>
 
-                                <?php }?>
+                                        <?php }?>
 
-                            </td>
-                        </tr>
-                        <tr>
+                                    </td>
+                                </tr>
+                                <tr>
 
-                            <td><label> </label></td>
+                                    <td><label> </label></td>
 
-                            <td>
-                                <a href="carRodioAssignment/buy/contactpg.php"><input type="submit" value="Contact the seller"
-                                        name="contact" /></a>
-                            </td>
-                        </tr>
-
+                                    <td>
+                                        <a href="carRodioAssignment/buy/contactpg.php"><input type="submit" value="Contact the seller"
+                                                name="contact" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> -->
                     </tbody>
             </table>
         </form>

@@ -6,14 +6,28 @@ body {
 }
 .form{
     margin-top: 150px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 #form{
     margin-top: 70px;
 }
+#wish_icon{
+    width: 110px;
+    height: 100px;
+    display: inline;
+    float: right;
+    margin-top: 60px;
+    margin-right: 380px;
+}
+.seller{
+    display: inline;
+    float: right;
+
+}
 .table{
-    padding-left: 2px;    
+    padding-left: 2px;  
+    color: #f7f4f4;
 }
 tr{
     border: #4c646c;

@@ -234,7 +234,7 @@ table{
   .section{
 	  position: absolute;
 	  top:100%;
-	  background-color: rgba(95, 95, 95, 0.863);
+	  background-color: #4c646c93;
 	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	  
   }
@@ -268,7 +268,7 @@ table{
 	border-radius: 10px;
 	padding: 18px;
 	margin: 20px;
-	background-color: rgb(190, 189, 189);
+	background-color: #4c646c;
 	
   }
   
