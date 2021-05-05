@@ -69,7 +69,7 @@ if ($conn->connect_error) {
     <div class="form">
         <form action="/carRodioAssignment/buy/contactpg.php" method="post" id="form">
             
-           
+        <a id="goBack" href="../homepg.php" > <b>&#8592;</b> All Advertisements</a>
                 <!-- Slideshow -->
                     <?php
                     $vId=$_REQUEST['vid'];

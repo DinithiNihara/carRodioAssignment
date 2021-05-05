@@ -58,6 +58,7 @@
         </header>
         <div class="form">
             <form action="/carRodioAssignment/sell/updateAdv2.php" method="post">
+            <a id="goBack" href="../sell/sellhomepg.php" > <b>&#8592;</b>  Seller Home Page</a>
                 <table class="table">
                     <thead>
                         <tr>

@@ -25,7 +25,11 @@ body {
     float: right;
 
 }
-
+#goBack{
+    background-color:  #42575e;
+    padding: 10px;
+    text-decoration: none;
+}
 .table{
     padding-left: 2px;  
     color: #f7f4f4;
@@ -75,6 +79,11 @@ textarea {
     box-sizing: border-box;
 
     width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
 }
 
   article {
