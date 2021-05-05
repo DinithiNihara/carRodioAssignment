@@ -25,6 +25,7 @@ body {
     float: right;
 
 }
+
 .table{
     padding-left: 2px;  
     color: #f7f4f4;
@@ -36,6 +37,13 @@ tr{
     text-align: center;
     padding-left: 30px;
     color: #f7f4f4;
+}
+.title_seller{
+    color: #f7f4f4;
+    font-size: 24px;
+    background-color:#445a61;
+    width: 100%;
+    padding: 10px;
 }
 #title{
     padding-top: 80px;
