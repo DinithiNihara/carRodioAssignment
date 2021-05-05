@@ -24,8 +24,9 @@
 
         <link href="../css/homepg.css" rel="stylesheet">
         <link href="../css/genreport.css" rel="stylesheet">
+        <link href="../css/sellpg.css" rel="stylesheet">
 
-        <title>Home</title>
+        <title>Generate Reports</title>
         <script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
 
     </head>

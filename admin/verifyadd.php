@@ -23,8 +23,9 @@
 
         <link href="../css/homepg.css" rel="stylesheet">
         <link href="../css/adminpg.css" rel="stylesheet">
+        <link href="../css/sellpg.css" rel="stylesheet">
 
-        <title>Home</title>
+        <title>Verify Advertisements</title>
         <script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
 
     </head>
@@ -65,7 +66,7 @@
             </nav>
         </header>
 
-        <h2 class="heading_verify">Verify Addvertisement</h2> <br>   
+        <h2 class="heading_verify">Verify Advertisement</h2> <br>   
 <div class="add_container">
 <div> 
     <a><input type="button" class="button2" value="Approve" name="Approve" /> </a>
