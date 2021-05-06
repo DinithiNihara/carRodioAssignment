@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,9 +22,9 @@
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="../css/homepg.css" rel="stylesheet">
-        <link href="../css/genreport.css" rel="stylesheet">
+        <link href="../css/adminpg.css" rel="stylesheet">
 
-        <title>Generate Reports page</title>
+        <title>Home</title>
         <script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
 
     </head>
@@ -66,15 +65,12 @@
             </nav>
         </header>
 
-<div class="report_container">
+<div class="main">
+        <h2>ADMIN HOME PAGE</h2> <br> <br> 
 
-<h2>Generate Reports</h2> <br> <br> 
-
-<div> <p> Highest Reached Advertisement Report</p>   <a href="highestadd.php" ><input type="button" class="link" value="Generate" name="verify" /> </a> <br> <br>      </div>
-<div> <p> Most Engaged Buyer Report</p>    <a href="numadd.php"  ><input type="button" value="Generate" class="link" name="manage" /> </a> <br> <br>     </div>
-<div> <p> Number Of Advertisements Report </p>   <a href="buyerreport.php"  > <input type="button" value="Generate" class="link" name="genreport" /> </a> <br> <br>      </div>
-<div>         </div>
-
+        <a href="verifyadd.php"  ><input type="button" class="button" value="Verify Advertisement" name="verify" /> </a> <br> <br>
+        <a><input type="button" class="button" value="Manage Users" name="manage" /> </a> <br> <br>
+        <a href="generatereport.php"><input type="button" class="button" value="Generate Reports" name="genreport" /> </a> <br> <br>
 </div>
  
 
