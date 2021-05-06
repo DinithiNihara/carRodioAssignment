@@ -37,7 +37,7 @@
                 $mail->SMTPAuth = true; // turn on SMTP authentication
                 $mail->Username = "niharaarts1@gmail.com"; // Your mail
                 $mail->Password = '3Dinithi3Nihara3'; // Your password mail
-                $mail->Port = 587; //specify SMTP Port
+                $mail->Port = 465; //specify SMTP Port
                 $mail->SMTPSecure = 'tls';   
 
                 $mail->Subject = "Advertisement - Rejected";
