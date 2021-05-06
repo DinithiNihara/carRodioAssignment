@@ -60,12 +60,12 @@ session_start();
                 cost at all using our free private listings.</p>
             <br><br>
             <a href="addAdv.php">
-                <input type="button" value=" Add advertisement " name="addadv" />
+                <input type="button" class="btn" value=" Add advertisement " name="addadv" />
             </a>
             <br><br><br>
             <h4>Edit/ Delete Advertisements</h4><br>
             <?php
-                $query1 = 'SELECT * FROM vehicle ';
+                $query1 = 'SELECT * FROM vehicle WHERE id NOT IN(SELECT vid FROM vehiclestatus)';
                 $get1 = $conn->query($query1)or die($conn->error);
                 $slideShowId = 1;
                 while ($rows1 = $get1->fetch_assoc()) {
@@ -116,11 +116,75 @@ session_start();
 
                             <td style="padding-right:100px;padding-left: 50px;padding-bottom: 80px; width: 50%">
                                 <a href="updateAdv.php?vid=<?php echo $rows1['id']?>">
-                                    <input type="button" value=" Update advertisement " />
+                                    <input type="button" class="btn" value=" Update advertisement " />
                                 </a>
                                 <br><br>
                                 <a href="deleteAdv.php?vid=<?php echo $rows1['id']?>">
-                                    <input type="button" value=" Delete advertisement "/>
+                                    <input type="button" class="btn" value=" Delete advertisement "/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+
+            <?php  $slideShowId++;} ?>
+            <br><br><br>
+
+            <h4>Published Advertisements</h4><br>
+            <?php
+                $query1 = 'SELECT * FROM vehicle WHERE id IN(SELECT vid FROM vehiclestatus)';
+                $get1 = $conn->query($query1)or die($conn->error);
+                $slideShowId = 1;
+                while ($rows1 = $get1->fetch_assoc()) {
+                    $vid= $rows1['id'];
+            ?>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="padding-left: 100px; width: 50%">
+                                <div class="cards">
+                                    <div class="card">
+                                        <div style="width:300px" id="slideShow<?php echo $slideShowId?>" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <?php
+                                                    // Get images from the database
+                                                    $query = $conn->query("SELECT * FROM carimages WHERE vehicleId=$vid");
+                                                    if($query->num_rows > 0) {
+                                                        $i = 1;
+                                                        while ($row = $query->fetch_assoc()) { ?>
+                                                            <div class="carousel-item <?php if ($i == 1){echo ' active';}  ?>"  >
+                                                                <img class="d-block w-100 img-fluid" src="uploads/<?php echo $row["fileName"]?>" alt="">
+                                                            </div>
+
+                                                            <?php
+                                                            $i++;
+                                                        }
+                                                    }
+                                                ?>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#slideShow<?php echo $slideShowId?>" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#slideShow<?php echo $slideShowId?>" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="text-align: center">
+                                    <a href="../buy/advpg.php?vid=<?php echo $rows1['id'];?>">
+                                        <h4><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b>
+                                        </h4>
+                                        <p><?php echo $rows1['modelYr']; ?></p>
+                                    </a>
+                                </div>
+
+
+                            </td>
+
+                            <td style="padding-right:100px;padding-left: 50px;padding-bottom: 80px; width: 50%">
+                                
+                                <a href="deleteAdv.php?vid=<?php echo $rows1['id']?>">
+                                    <input type="button" class="btn" value=" Delete advertisement "/>
                                 </a>
                             </td>
                         </tr>
@@ -132,7 +196,7 @@ session_start();
 
             <h4>View Contact History</h4><br>
             <a href="/carRodioAssignment/sell/contHistorypg.php">
-                <input type="button" value=" Contact History " name="contact" />
+                <input type="button" class="btn" value=" Contact History " name="contact" />
             </a>
             <br><br>
         </form>

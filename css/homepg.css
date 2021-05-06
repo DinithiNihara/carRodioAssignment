@@ -8,13 +8,13 @@ body {
 
 div .logo{
     padding: 0px ;
-  }
+}
   
-  .logo img{
-    width: 230px;
-  }
+.logo img{
+	width: 230px;
+}
 
-  ul {
+ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -268,7 +268,7 @@ table{
 	border-radius: 10px;
 	padding: 18px;
 	margin: 20px;
-	background-color: #4c646c;
+	background-color: #39525a;
 	
   }
   
