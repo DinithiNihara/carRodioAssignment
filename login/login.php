@@ -26,7 +26,7 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
             $_SESSION['email']=$uemail;
             echo "(<SCRIPT LANGUAGE='JavaScript'>
             window.alert('You have successfully logged in.')
-            window.location.href='/carRodioAssignment/sell/sellhomepg.php';
+            window.location.href='/carRodioAssignment/homepg.php';
             </SCRIPT>)";
         die;
         }
