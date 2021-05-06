@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 
-<html lang="en">
-
-
-
-<body>
-
-    <!DOCTYPE html>
-
     <html lang="en">
 
     <head>
@@ -66,7 +58,7 @@
         </header>
 
 <div class="main">
-        <h2>Highest Reached Advertisement Report</h2> <br> <br> 
+        <h2>Most Engaged Buyer Report</h2> <br> <br> 
  
         <table class="tg">
 <thead>
@@ -74,8 +66,7 @@
     <th class="tg-0lax"> Buyer ID</th>
     <th class="tg-0lax"> Buyer name</th>
     <th class="tg-0lax"> Number of clicks </th>
-    <th class="tg-0lax"> </th>
-    <th class="tg-0lax"> </th>
+    
   </tr>
 </thead>
 <tbody>
@@ -83,23 +74,18 @@
     <td class="tg-0lax">    </td>
     <td class="tg-0lax">    </td>
     <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
+
   </tr>
 </tbody>
 </table>
   
 </div>
-<div class="highest_add">
+<div class="buyer_div">
 
-
+<img class="profile" src="/carRodioAssignment/img/profile_logo.png" alt="">
 
 </div>
 <a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
-
-
-
-
 
 
     </body>

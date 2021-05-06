@@ -1,10 +1,4 @@
-<!DOCTYPE html>
 
-<html lang="en">
-
-
-
-<body>
 
     <!DOCTYPE html>
 
@@ -66,17 +60,34 @@
         </header>
 
 <div class="main">
-        <h2>ADMIN HOME PAGE</h2> <br> <br> 
-
-        <a href="verifyadd.php"  ><input type="button" class="button" value="Verify Advertisement" name="verify" /> </a> <br> <br>
-        <a><input type="button" class="button" value="Manage Users" name="manage" /> </a> <br> <br>
-        <a href="generatereport.php"><input type="button" class="button" value="Generate Reports" name="genreport" /> </a> <br> <br>
-</div>
+        <h2>Highest Reached Advertisement Report</h2> <br> <br> 
  
+        <table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"> Buyer ID</th>
+    <th class="tg-0lax"> Buyer name</th>
+    <th class="tg-0lax"> Number of clicks </th>
+    
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+</tbody>
+</table>
+  
+</div>
+<div class="highest_add">
 
 
 
-
+</div>
+<a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
 
 
     </body>

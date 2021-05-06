@@ -1,8 +1,43 @@
 body {
 	margin:0;
-	background-color: #c2c1c1;
+  background-color: #4c646c;
+  color: #f7f4f4;
 }
 
+.link{
+  width: 30px;
+  margin-left: 10px;
+  /*padding: 5px 75px;*/
+  text-align: center;
+  font-size: 15px;
+  background-color:  #1b2e35;
+  color: white;
+
+}
+
+.admin_btn{
+display: block;
+float: left;
+
+}
+
+.admin_btn > input{
+  width: 180px;
+  display: block;
+  float: right;
+  margin: 10px 10px;
+  /*padding: 5px 75px;*/
+  text-align: center;
+  font-size: 15px;
+  background-color:rgba(2, 30, 49, 0.651);
+  border: none;
+  color: white;
+  text-decoration: none;  
+  cursor: pointer;
+  padding: 8px;
+  }
+
+  
 .report_container{
     margin-top: 70px;
     margin-top: 150px;

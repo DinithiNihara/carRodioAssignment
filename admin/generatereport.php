@@ -1,12 +1,3 @@
-
-<!DOCTYPE html>
-
-<html lang="en">
-
-
-
-<body>
-
     <!DOCTYPE html>
 
     <html lang="en">
@@ -24,7 +15,7 @@
 
         <link href="../css/homepg.css" rel="stylesheet">
         <link href="../css/genreport.css" rel="stylesheet">
-        <link href="../css/sellpg.css" rel="stylesheet">
+        
 
         
         <title>Generate Report page</title>
@@ -72,10 +63,10 @@
 
 <h2>Generate Reports</h2> <br> <br> 
 
-<div> <p> Highest Reached Advertisement Report</p>   <a href="highestadd.php" ><input type="button" class="link" value="Generate" name="verify" /> </a> <br> <br>      </div>
-<div> <p> Most Engaged Buyer Report</p>    <a href="numadd.php"  ><input type="button" value="Generate" class="link" name="manage" /> </a> <br> <br>     </div>
-<div> <p> Number Of Advertisements Report </p>   <a href="buyerreport.php"  > <input type="button" value="Generate" class="link" name="genreport" /> </a> <br> <br>      </div>
-<div>         </div>
+<div> <p> Highest Reached Advertisement Report</p>   <a href="highestadd.php"  class="link" ><input type="button" class="report_button"  value="Generate" name="verify" /> </a> <br> <br>      </div>
+<div> <p> Most Engaged Buyer Report</p>    <a href="buyerreport.php"   class="link"  ><input type="button" value="Generate"  name="manage" /> </a> <br> <br>     </div>
+<div> <p> Number Of Advertisements Report </p>   <a href="numadd.php" class="link"  > <input type="button" value="Generate" name="genreport" /> </a> <br> <br>      </div>
+<div>  <a href="adminhomepg.php"  class="admin_btn" ><input type="button"   value="Admin Panel" name="admin" /> </a>        </div>
 
 </div>
  
