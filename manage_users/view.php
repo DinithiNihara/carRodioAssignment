@@ -1,5 +1,9 @@
-
-<body>
+ <?php
+  
+  require_once("connection.php");
+  $query = "select * from users";
+  $result = mysqli_query($con,$query);
+ ?>
 
     <!DOCTYPE html>
 
@@ -14,22 +18,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Bootstrap CSS -->
-        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+        
+        <link rel="stylesheet" a href="CSS/bootstrap.css"/>
         <link href="../css/homepg.css" rel="stylesheet">
-        <link href="../css/adminpg.css" rel="stylesheet">
         <link href="../css/sellpg.css" rel="stylesheet">
 
-        <title>Admin Home</title>
+        <title>Manage user</title>
         <script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
 
     </head>
 
-    <body>
-
         <script src="../js/imgupload.js"></script>
         <!-- Header -->
-        <header class="">
+ 
+<body class="bg-dark ">
+
+<header >
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <!-- Logo -->
@@ -61,21 +65,72 @@
             </nav>
         </header>
 
-<div class="main">
-        <h2>ADMIN HOME PAGE</h2> <br> <br> 
-
-        <a href="verifyadd.php"  ><input type="button" class="button" value="Verify Advertisement" name="verify" /> </a> <br> <br>
-        <a href="../manage_users/view.php"><input type="button" class="button" value="Manage Users" name="manage" /> </a> <br> <br>   
-        <a href="generatereport.php"><input type="button" class="button" value="Generate Reports" name="genreport" /> </a> <br> <br>
-</div>
- 
 
 
 
 
 
+      <div class="container container1">
+        <div class="row">
+         <div class="col m-auto">
+          <div class="card mt-5">
+            <table class = "table table-bordered"> 
+               <tr>
+                 <td>User ID </td>
+                 <td>Email </td>
+                 <td>Username </td>
+                 <td>Address </td>
+                 <td>Contact Number </td>
+                 <td> Edit </td>
+                 <td> </td>
+                 <td> Delete </td>
 
-    </body>
+               </tr>
 
-    </html>
+               <?php
 
+                    while($row=mysqli_fetch_assoc($result))
+                    {   $UserID = $row['id'];
+                        $UserEmail = $row['email'];
+                        $UserName = $row['uname'];
+                        $UserAddress = $row['address'];
+                        $UserC = $row['cno'];
+
+                    
+
+               ?>
+
+                     <tr>
+                        <td><?php echo $UserID ?></td> 
+                        <td><?php echo $UserEmail ?></td> 
+                        <td><?php echo $UserName ?></td>
+                        <td><?php echo $UserAddress ?></td>
+                        <td><?php echo $UserC ?></td>
+
+                        
+                        <td><a href="edit.php?GetID=<?php echo $UserID ?>">Edit</a><td>
+                        <td><a href="delete.php?Del=<?php echo $UserID ?>">Delete</a><td>
+                    <tr> 
+
+                    
+
+                <?php
+
+                    }
+                
+                ?>
+     
+
+
+            </table>
+          
+        
+         </div>
+       </div>
+    </div>
+  </div>
+
+  <a href="../admin/adminhomepg.php"  >  <input type="button" value="Back" class="button1" name="back" /> </a>
+
+</body>
+</html>

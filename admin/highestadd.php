@@ -79,27 +79,42 @@ $conn = getDBConnection();
 <div class="main">
         <h2>Highest Reached Advertisement Report</h2> <br> <br> 
  
+        <?php
+                    $vId=46;
+
+                    $query1 = "SELECT * FROM vehicle WHERE id=$vId";
+                    $get1 = $conn->query($query1);
+                    $option1 = '';
+                    while ($rows1 = $get1->fetch_assoc()) {?>
+
         <table class="tg">
 <thead>
   <tr>
     <th class="tg-0lax"> Advertisement ID</th>
-    <th class="tg-0lax"> Vehicle brand</th>
     <th class="tg-0lax"> Seller </th>
+    <th class="tg-0lax"> Vehicle brand</th>
+    <th class="tg-0lax"> Vehicle Model </th>
     <th class="tg-0lax"> Number of clicks</th>
-    <th class="tg-0lax"> Additional Infomation</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
+    <td class="tg-0lax"> <?php echo $rows1["id"];?>  </td>
+
+    <td class="tg-0lax">   <?php echo $rows1["sname"];?>  </td>
+
+    <td class="tg-0lax">  <?php echo $rows1["manufacturer"];?>   </td>
+
+    <td class="tg-0lax">  <?php echo $rows1["model"];?>   </td>
+
+    <td class="tg-0lax">   <?php echo 29;?>  </td>
   </tr>
 </tbody>
+
 </table>
   
+<?php } ?>
+
 </div>
 <div class="highest_add">
 

@@ -51,9 +51,7 @@
             else 
             {
                 echo '<script>confirm("Seller has been informed.");
-                window.location.href="http://localhost/carRodioAssignment/admin/verifyadd.php";</script>';
-                
-                
+                window.location.href="http://localhost/carRodioAssignment/admin/verifyadd.php";</script>';        
             }
             
         }else{

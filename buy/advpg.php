@@ -96,7 +96,10 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
                     $get1 = $conn->query($query1);
                     $option1 = '';
                     while ($rows1 = $get1->fetch_assoc()) {?>
+
+                     <a href="wishlist.php?vid=<?php echo $rows1['id'];?>">
                     <img id="wish_icon" src="/carRodioAssignment/img/wish.png"/>
+                    </a>
                     <h2 class="title_add" id="title"><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
                     <h4 class="title_add" name="modelYr"><?php echo $rows1['modelYr']; ?></h4>
                     

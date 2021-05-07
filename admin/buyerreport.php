@@ -1,3 +1,11 @@
+
+<?php
+require_once '../connection.php';
+$conn = getDBConnection();
+?>
+
+
+
 <!DOCTYPE html>
 
     <html lang="en">
@@ -59,30 +67,43 @@
 
 <div class="main">
         <h2>Most Engaged Buyer Report</h2> <br> <br> 
- 
+      
+</div>
+<div class="buyer_div">
+
+<img class="profile" src="/carRodioAssignment/img/profile_logo.png" alt="">
+
+<?php
+                    $Email='remonkavi@gmail.com';
+
+                    $query1 = "SELECT * FROM users WHERE id=7";
+                    $get1 = $conn->query($query1);
+                    while ($rows1 = $get1->fetch_assoc()) {?>
         <table class="tg">
 <thead>
   <tr>
-    <th class="tg-0lax"> Buyer ID</th>
+  <th class="tg-0lax"> Buyer Email</th>
     <th class="tg-0lax"> Buyer name</th>
-    <th class="tg-0lax"> Number of clicks </th>
+    <th class="tg-0lax"> Buyer address</th>
+    <th class="tg-0lax"> Contact Number</th>
+    <td class="tg-0lax">  Number of sessions  </td>
     
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">  <?php echo $rows1["email"];?>    </td>
+    <td class="tg-0lax">   <?php echo $rows1["uname"];?>   </td>
+    <td class="tg-0lax">  <?php echo $rows1["address"];?>    </td>
+    <td class="tg-0lax">  <?php echo $rows1["cno"];?>    </td>
+    <td class="tg-0lax">  <?php echo 18;?>    </td>
 
   </tr>
 </tbody>
 </table>
-  
-</div>
-<div class="buyer_div">
 
-<img class="profile" src="/carRodioAssignment/img/profile_logo.png" alt="">
+<?php }?>
+  
 
 </div>
 <a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>

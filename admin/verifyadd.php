@@ -4,8 +4,6 @@ $conn = getDBConnection();
 session_start();
 ?>
 
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -68,8 +66,8 @@ session_start();
     </header>
 
     <h2 class="heading_verify">Verify Advertisements</h2> <br>
-    <div class="add_container">
-    <?php
+        <div class="add_container">
+            <?php
                 $query1 = 'SELECT * FROM vehicle WHERE id NOT IN(SELECT vid FROM vehiclestatus)';
                 $get1 = $conn->query($query1)or die($conn->error);
                 $slideShowId = 1;

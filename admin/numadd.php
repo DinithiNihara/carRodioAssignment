@@ -60,7 +60,7 @@
         </header>
 
 <div class="main">
-        <h2>Highest Reached Advertisement Report</h2> <br> <br> 
+        <h2>Number Of Advertisements Report</h2> <br> <br> 
  
         <table class="tg">
 <thead>
