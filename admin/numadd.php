@@ -62,13 +62,19 @@
 <div class="main">
         <h2>Number Of Advertisements Report</h2> <br> <br> 
  
-        <table class="tg">
+
+  
+</div>
+<div class="highest_add">
+<table class="tg tg1">
 <thead>
   <tr>
-    <th class="tg-0lax"> Buyer ID</th>
-    <th class="tg-0lax"> Buyer name</th>
-    <th class="tg-0lax"> Number of clicks </th>
-    
+    <th class="tg-0lax"> Manufacturer</th>
+    <th class="tg-0lax"> Model</th>
+    <th class="tg-0lax"> Model year </th>
+    <th class="tg-0lax"> Condition </th>
+    <th class="tg-0lax"> Seller </th>
+    <th class="tg-0lax"> Contact number</th>
   </tr>
 </thead>
 <tbody>
@@ -76,14 +82,58 @@
     <td class="tg-0lax">    </td>
     <td class="tg-0lax">    </td>
     <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+
+  </tr>
+  <tr>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
+    <td class="tg-0lax">    </td>
 
   </tr>
 </tbody>
 </table>
-  
-</div>
-<div class="highest_add">
-
 
 
 </div>

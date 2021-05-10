@@ -20,10 +20,29 @@ body {
     margin-top: 60px;
     margin-right: 380px;
 }
+.button1{
+
+    width: 250px;
+    margin-left:200px;
+    /*padding: 5px 75px;*/
+    text-align: center;
+    font-size: 15px;
+    background-color:rgba(6, 60, 95, 0.651);
+    border: none;
+    color: white;
+    text-decoration: none;  
+    cursor: pointer;
+    padding: 8px;
+
+}
+.h3_wishlist{
+    margin-left:200px;
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .seller{
     display: inline;
     float: right;
-
 }
 #goBack{
     background-color:  #42575e;

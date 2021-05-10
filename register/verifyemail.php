@@ -2,7 +2,7 @@
 //include("../connection.php");
 session_start();
 $errors ='';
-var_dump($query);
+
 
 if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
 {  

@@ -138,7 +138,7 @@ session_start();
     <script>
         document.getElementsByClassName("ss1")[0].classList.add("active");
     </script>
-            
+   <a href="../admin/adminhomepg.php"  >  <input type="button" value="Back" class="button1" name="back" /> </a>         
 </body>
 
 </html>

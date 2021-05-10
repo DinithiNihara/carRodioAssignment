@@ -49,6 +49,7 @@ else
 </head>
 <body>
 
+<h3 class="h3_wishlist"> Wishlist </h3>
 <?php
                 $query1 = 'SELECT * FROM vehicle WHERE id IN(SELECT vid FROM wishlist)';
                 $get1 = $conn->query($query1)or die($conn->error);
