@@ -1,4 +1,9 @@
 
+<?php
+require_once '../connection.php';
+$conn = getDBConnection();
+?>
+
 
     <!DOCTYPE html>
 
@@ -65,10 +70,14 @@
 
   
 </div>
-<div class="highest_add">
+<div class="num_add">
+
+  
 <table class="tg tg1">
+
 <thead>
   <tr>
+  <th class="tg-0lax"> Vehicle id</th>
     <th class="tg-0lax"> Manufacturer</th>
     <th class="tg-0lax"> Model</th>
     <th class="tg-0lax"> Model year </th>
@@ -76,64 +85,31 @@
     <th class="tg-0lax"> Seller </th>
     <th class="tg-0lax"> Contact number</th>
   </tr>
+  
 </thead>
+<?php
+                    
+
+                    $query1 = "SELECT * FROM vehicle ";
+                    $get1 = $conn->query($query1);
+                    $option1 = '';
+                    while ($rows1 = $get1->fetch_assoc()) {?>
+
 <tbody>
   <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-
-  </tr>
-  <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-
-  </tr>
-  <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-
-  </tr>
-  <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-
-  </tr>
-  <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-
-  </tr>
-  <tr>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
-    <td class="tg-0lax">    </td>
+  <td class="tg-0lax">   <?php echo $rows1["id"];?>   </td>
+    <td class="tg-0lax"> <?php echo $rows1["manufacturer"];?>   </td>
+    <td class="tg-0lax">  <?php echo $rows1["model"];?>  </td>
+    <td class="tg-0lax">  <?php echo $rows1["modelYr"];?>  </td>
+    <td class="tg-0lax">  <?php echo $rows1["vCondition"];?>  </td>
+    <td class="tg-0lax">  <?php echo $rows1["sname"];?>  </td>
+    <td class="tg-0lax">  <?php echo $rows1["scno"];?>  </td>
 
   </tr>
 </tbody>
+<?php } ?>
 </table>
+
 
 
 </div>
