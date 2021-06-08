@@ -23,6 +23,8 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
         if($row['email'] == $uemail
         && $row['password'] == $upwd)
         {
+            $sql="UPDATE user SET logins=logins+1 WHERE email='$uemail'";
+            $conn->query($sql);
             $_SESSION['email']=$uemail;
             echo "(<SCRIPT LANGUAGE='JavaScript'>
             window.alert('You have successfully logged in.')

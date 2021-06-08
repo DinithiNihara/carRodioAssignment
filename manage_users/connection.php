@@ -1,7 +1,7 @@
 <?php
 
 
- $con = mysqli_connect("localhost","root","","carrodio1");
+ $con = mysqli_connect("localhost","root","1234","carrodio1");
 
  if(!$con)
  {
