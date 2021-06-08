@@ -1,17 +1,11 @@
-
 <?php
 require_once '../connection.php';
 $conn = getDBConnection();
 ?>
 
+<!DOCTYPE html>
 
-
-
-
-
-    <!DOCTYPE html>
-
-    <html lang="en">
+<html lang="en">
 
     <head>
 
@@ -28,12 +22,12 @@ $conn = getDBConnection();
         <link href="../css/adminpg.css" rel="stylesheet">
 
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/homepg.css" rel="stylesheet">
-    <link href="../css/sellpg.css" rel="stylesheet">
+        <link href="../css/homepg.css" rel="stylesheet">
+        <link href="../css/sellpg.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <title>Highest Reached Advertisement Report</title>
        
@@ -76,399 +70,281 @@ $conn = getDBConnection();
             </nav>
         </header>
 
-<div class="main">
-        <h2>Highest Reached Advertisement Report</h2> <br> <br> 
- 
-        <?php
-                    $vId=46;
+        <div class="main">
+            <h2>Highest Reached Advertisement Report</h2> <br> <br> 
+    
+            <?php
+                        $query1 = "SELECT * FROM vehicle WHERE views IN( SELECT MAX(views) AS views FROM vehicle)";
+                        $get1 = $conn->query($query1);
+                        $option1 = '';
+                        while ($rows1 = $get1->fetch_assoc()) {?>
 
-                    $query1 = "SELECT * FROM vehicle WHERE id=$vId";
-                    $get1 = $conn->query($query1);
-                    $option1 = '';
-                    while ($rows1 = $get1->fetch_assoc()) {?>
+            <table class="tg">
+                <thead>
+                <tr>
+                    <th class="tg-0lax"> Advertisement ID</th>
+                    <th class="tg-0lax"> Seller </th>
+                    <th class="tg-0lax"> Vehicle brand</th>
+                    <th class="tg-0lax"> Vehicle Model </th>
+                    <th class="tg-0lax"> Number of clicks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="tg-0lax"> <?php echo $rows1["id"];?>  </td>
 
-        <table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0lax"> Advertisement ID</th>
-    <th class="tg-0lax"> Seller </th>
-    <th class="tg-0lax"> Vehicle brand</th>
-    <th class="tg-0lax"> Vehicle Model </th>
-    <th class="tg-0lax"> Number of clicks</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0lax"> <?php echo $rows1["id"];?>  </td>
+                    <td class="tg-0lax">   <?php echo $rows1["sname"];?>  </td>
 
-    <td class="tg-0lax">   <?php echo $rows1["sname"];?>  </td>
+                    <td class="tg-0lax">  <?php echo $rows1["manufacturer"];?>   </td>
 
-    <td class="tg-0lax">  <?php echo $rows1["manufacturer"];?>   </td>
+                    <td class="tg-0lax">  <?php echo $rows1["model"];?>   </td>
 
-    <td class="tg-0lax">  <?php echo $rows1["model"];?>   </td>
+                    <td class="tg-0lax">   <?php echo $rows1["views"];?>  </td>
+                </tr>
+                </tbody>
 
-    <td class="tg-0lax">   <?php echo 29;?>  </td>
-  </tr>
-</tbody>
-
-</table>
-  
-<?php } ?>
-
-</div>
-<div class="highest_add">
-
-<div class="form">
-        <form action="/carRodioAssignment/buy/contactpg.php" method="post" id="form">
-            
-           
-                <!-- Slideshow -->
-                    <?php
-                    $vId=46;
-
-                    $query1 = "SELECT * FROM vehicle WHERE id=$vId";
-                    $get1 = $conn->query($query1);
-                    $option1 = '';
-                    while ($rows1 = $get1->fetch_assoc()) {?>
-                   
-                    <h2 class="title_add" id="title"><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
-                    <h4 class="title_add" name="modelYr"><?php echo $rows1['modelYr']; ?></h4>
-                    
-
-                    <input type="hidden" name="manufacturer" id="con_content" 
-                    value="<?php echo $rows1['manufacturer']; ?>
-                    <?php echo $rows1['model'];?>
-                    <?php echo $rows1['modelYr']; ?>" />
-
-                    <?php }?>
-                    <div >
-                        <table class="seller">
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <label class="title_seller"><b>Seller Details:</b></label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td><label>Name: </label>
-                                    <?php
-                                            $query1 = "SELECT sname FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                            $option1 = '';
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                    <label type="text" name="sname" id="sname"><?php echo $rows1['sname']; ?></label>
-
-                                    <?php }?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td><label>Contact No: </label>
-                                    <?php
-                                            $query1 = "SELECT scno FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                            $option1 = '';
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                    <label type="text" name="scno" id="scno"><?php echo $rows1['scno']; ?></label>
-
-                                    <?php }?>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td><label>Email: </label>
-                                    <?php
-                                            $query1 = "SELECT semail FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                            $option1 = '';
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                    <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
-
-                                    <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
-
-                                    <?php }?>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td><label>Location: </label>
-                                    <?php
-                                            $query1 = "SELECT sloc FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                            $option1 = '';
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                    <label type="text" name="sloc" id="sloc"><?php echo $rows1['sloc']; ?></label>
-
-                                    <?php }?>
-
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td><label> </label></td>
-
-                                <td>
-                                    <a href="carRodioAssignment/buy/contactpg.php"><input type="submit" value="Contact the seller"
-                                            name="contact" /></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-            
-                            <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" style="width:250px">
-                                <div class="carousel-inner">
-                                    <?php
-                                        // Get images from the database
-                                        $query = $conn->query("SELECT * FROM carimages WHERE vehicleId=$vId");
-
-                                        if($query->num_rows > 0){
-                                            while($row = $query->fetch_assoc()){
-                                                $imageURL = '../sell/uploads/'.$row["fileName"];
-                                                ?>
-
-                                                    <div class="carousel-item ss1">
-                                                        <img src="<?php echo $imageURL; ?>" alt="" class="image img-fluid mainslide" />
-                                                    </div>
-                                    <?php }
-                                            
-                                        }else{ ?>
-                                            <p>No image(s) found...</p>
-                                            <?php } ?>
-
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>    
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </a>
-                            </div>
-                            <br>
-                    
-                            
-                        <!-- All Images  -->   
-                                <?php
-                                // Get images from the database
-                                $query = $conn->query("SELECT * FROM carimages WHERE vehicleId=$vId ORDER BY vehicleId DESC");
-
-                                    if($query->num_rows > 0){
-                                        while($row = $query->fetch_assoc()){
-                                            $imageURL = '../sell/uploads/'.$row["fileName"];
-                                ?>
-                                <img src="<?php echo $imageURL; ?>" alt="" class="thumbnail1" />
-                                        <?php }
-                                    }else{ ?>
-                                        <p>No image(s) found...</p>
-                                        <?php } ?>
-
-                                        
-
-            <table >       
-                    <tbody>
-                        <tr>
-                            <td><label><b>Condition, Body type & More</b></label></td>
-                        </tr>
-                        <tr>
-                            <td><label>Condition: </label></td>
-                            <td>
-                                <?php
-                                        $query1 = "SELECT vCondition FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-
-                                <p><?php echo $rows1['vCondition']; ?></p>
-
-                                <?php }?>
-
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td><label>Color: </label></td>
-                            <td>
-                                <?php
-                                        $query1 = "SELECT color FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                             
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['color']; ?>
-                                </p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label>Body Type: </label></td>
-                            <td>
-                                <?php
-                                    $query1 = "SELECT bodyType FROM vehicle WHERE id=$vId";
-                                    $get1 = $conn->query($query1);
-                                
-                                    while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['bodyType']; ?>
-                                </p>
-
-                                <?php }?>
-
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td><label>Fuel Type: </label></td>
-                            <td>
-                                <?php
-                                    $query1 = "SELECT fuelType FROM vehicle WHERE id=$vId";
-                                    $get1 = $conn->query($query1);
-                                
-                                    while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['fuelType']; ?>
-                                </p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label>Year of Registration: </label></td>
-                            <td>
-                                <?php
-                                            $query1 = "SELECT regYr FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                         
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['regYr']; ?>
-                                </p>
-
-                                <?php }?>
-                            </td>
-                        </tr>
-                        <tr>
-                        <tr>
-                            <td><label> </label></td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <td><label><b>Other</label></b></td>
-                        </tr>
-                        <tr>
-                            <td><label>Engine Capacity: </label></td>
-                            <td>
-                                <?php
-                                            $query1 = "SELECT engCapacity FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                        
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['engCapacity']; ?>
-                                </p>
-
-                                <?php }?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label>Transmission: </label></td>
-                            <td>
-                                <?php
-                                            $query1 = "SELECT transmission FROM vehicle WHERE id=$vId";
-                                            $get1 = $conn->query($query1);
-                                
-                                            while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p>
-                                    <?php echo $rows1['transmission']; ?>
-                                </p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label>Mileage: </label></td>
-                            <td>
-                                <?php
-                                        $query1 = "SELECT mileage FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p name="mil_content" id="mil_content">
-                                    <?php echo $rows1['mileage']; ?> </p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td><label></label></td>
-                        </tr>
-                        <tr>
-                            <td><label>Price: </label></td>
-                            <td>
-                                <?php
-                                    $query1 = "SELECT price FROM vehicle WHERE id=$vId";
-                                    $get1 = $conn->query($query1);
-                                    $option1 = '';
-                                    while ($rows1 = $get1->fetch_assoc()) {?>
-                                <p name="price" id="price" ><?php echo $rows1['price']; ?> </p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label> </label></td>
-                        </tr>
-                        <tr>
-                            <td><label>Additional Details: </label></td>
-                            <td>
-                                <?php
-                                        $query1 = "SELECT addDetails FROM vehicle WHERE id=$vId";
-                                        $get1 = $conn->query($query1);
-                                        $option1 = '';
-                                        while ($rows1 = $get1->fetch_assoc()) {?>
-                                        <p  name="adDetails" id="adDetails">
-                                        <?php echo $rows1['addDetails']; ?></p>
-
-                                <?php }?>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label> </label></td>
-                        </tr>
-                        
-                    </tbody>
             </table>
-        </form>
-    </div>
+    
+            <?php } ?>
 
-    <script>
-        document.getElementsByClassName("ss1")[0].classList.add("active");
-    </script>
+        </div>
+        <div class="highest_add">
+
+            <div class="form">
+                <form action="/carRodioAssignment/buy/contactpg.php" method="post" id="form">
+                    
+                
+                        <!-- Slideshow -->
+                            <?php
+                            $query1 = "SELECT * FROM vehicle WHERE views IN( SELECT MAX(views) AS views FROM vehicle)";
+                            $get1 = $conn->query($query1);
+                            $option1 = '';
+                            $vId=$rows1["id"];
+                            $rows1 = $get1->fetch_assoc() ?>
+                        
+                            <h2 class="title_add" id="title"><b><?php echo $rows1['manufacturer']; ?> <?php echo $rows1['model']; ?></b></h2>
+                            <h4 class="title_add" name="modelYr"><?php echo $rows1['modelYr']; ?></h4>
+                            
+
+                            <input type="hidden" name="manufacturer" id="con_content" 
+                            value="<?php echo $rows1['manufacturer']; ?>
+                            <?php echo $rows1['model'];?>
+                            <?php echo $rows1['modelYr']; ?>" />
+
+                            
+                            <div >
+                                <table class="seller">
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <label class="title_seller"><b>Seller Details:</b></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td><label>Name: </label>
+                                            <label type="text" name="sname" id="sname"><?php echo $rows1['sname']; ?></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td><label>Contact No: </label>
+                                            <label type="text" name="scno" id="scno"><?php echo $rows1['scno']; ?></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td><label>Email: </label>
+                                            <label type="text" name="semail" id="semail" ><?php echo $rows1['semail']; ?></label>
+
+                                            <input type="hidden" name="sellerEmail" value="<?php echo $rows1['semail']; ?>"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td><label>Location: </label>
+                                            <label type="text" name="sloc" id="sloc"><?php echo $rows1['sloc']; ?></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td><label> </label></td>
+
+                                        <td>
+                                            <a href="carRodioAssignment/buy/contactpg.php"><input type="submit" value="Contact the seller"
+                                                    name="contact" /></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                    
+                                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" style="width:250px">
+                                        <div class="carousel-inner">
+                                            <?php
+                                                // Get images from the database
+                                                $query = $conn->query("SELECT * FROM carimages WHERE vehicleId IN(
+                                                    SELECT id FROM vehicle WHERE views IN( SELECT MAX(views) AS views FROM vehicle)
+                                                ) ORDER BY vehicleId DESC");
+
+                                                if($query->num_rows > 0){
+                                                    while($row = $query->fetch_assoc()){
+                                                        $imageURL = '../sell/uploads/'.$row["fileName"];
+                                                        ?>
+
+                                                            <div class="carousel-item ss1">
+                                                                <img src="<?php echo $imageURL; ?>" alt="" class="image img-fluid mainslide" />
+                                                            </div>
+                                            <?php }
+                                                    
+                                                }else{ ?>
+                                                    <p>No image(s) found...</p>
+                                                    <?php } ?>
+
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>    
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </a>
+                                    </div>
+                                    <br>
+                            
+                                    
+                                <!-- All Images  -->   
+                                        <?php
+                                        // Get images from the database
+                                        $query = $conn->query("SELECT * FROM carimages WHERE vehicleId IN(
+                                            SELECT id FROM vehicle WHERE views IN( SELECT MAX(views) AS views FROM vehicle)
+                                        ) ORDER BY vehicleId DESC");
+
+                                            if($query->num_rows > 0){
+                                                while($row = $query->fetch_assoc()){
+                                                    $imageURL = '../sell/uploads/'.$row["fileName"];
+                                        ?>
+                                        <img src="<?php echo $imageURL; ?>" alt="" class="thumbnail1" />
+                                                <?php }
+                                            }else{ ?>
+                                                <p>No image(s) found...</p>
+                                                <?php } ?>
+
+                    <table >       
+                            <tbody>
+                                <tr>
+                                    <td><label><b>Condition, Body type & More</b></label></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Condition: </label></td>
+                                    <td>
+
+                                        <p><?php echo $rows1['vCondition']; ?></p>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><label>Color: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['color']; ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Body Type: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['bodyType']; ?>
+                                        </p>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><label>Fuel Type: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['fuelType']; ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Year of Registration: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['regYr']; ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <tr>
+                                    <td><label> </label></td>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <td><label><b>Other</label></b></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Engine Capacity: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['engCapacity']; ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Transmission: </label></td>
+                                    <td>
+                                        <p>
+                                            <?php echo $rows1['transmission']; ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Mileage: </label></td>
+                                    <td>
+                                        <p name="mil_content" id="mil_content">
+                                            <?php echo $rows1['mileage']; ?> </p>
+                                    </td>
+                                </tr>
 
 
+                                <tr>
+                                    <td><label></label></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Price: </label></td>
+                                    <td>
+                                        <p name="price" id="price" ><?php echo $rows1['price']; ?> </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label> </label></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Additional Details: </label></td>
+                                    <td>
+                                                <p  name="adDetails" id="adDetails">
+                                                <?php echo $rows1['addDetails']; ?></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label> </label></td>
+                                </tr>
+                                
+                            </tbody>
+                    </table>
+                </form>
+            </div>
 
-</div>
-<a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
+            <script>
+                document.getElementsByClassName("ss1")[0].classList.add("active");
+            </script>
 
-
-
-
-
-
+        </div>
+        <a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
     </body>
 
-    </html>
+</html>

@@ -1,14 +1,7 @@
 <?php
-
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "carrodio1";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+session_start();
+require_once '../connection.php';
+$conn = getDBConnection();
 
 ?>
 

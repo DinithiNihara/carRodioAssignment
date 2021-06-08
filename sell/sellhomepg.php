@@ -1,7 +1,7 @@
 <?php
+session_start();
 require_once '../connection.php';
 $conn = getDBConnection();
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">

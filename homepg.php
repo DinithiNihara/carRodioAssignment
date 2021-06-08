@@ -1,14 +1,7 @@
 <?php
 session_start();
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "carrodio1";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'connection.php';
+$conn = getDBConnection();
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +31,8 @@ if ($conn->connect_error) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
+    <script src="https://kit.fontawesome.com/bb52f0e357.js" crossorigin="anonymous"></script>
 
     <title>Home</title>
 
@@ -79,9 +74,20 @@ if ($conn->connect_error) {
                 <a class="" href="/carRodioAssignment/login/login.php">
                     <div class="signin">
                         <img class="signin" src="/carRodioAssignment/img/signin.png" >
-                        <p>Sign in</p>
+                        <?php
+                        if(isset($_SESSION['uname'])){
+                            echo "<p>".$_SESSION['uname']."</p>";
+                        }else{
+                            echo "<p>Sign in</p>";
+                        }
+                        ?>
                     </div>
                 </a>
+                <?php 
+                    if(isset($_SESSION['uname'])){
+                        echo "<a style='margin-top:60px' href='logout.php'>Logout</a>";
+                    }
+                ?>
             </div>
         </nav>
     </header>

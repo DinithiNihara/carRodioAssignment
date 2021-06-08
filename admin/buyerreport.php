@@ -1,10 +1,8 @@
-
 <?php
+session_start();
 require_once '../connection.php';
 $conn = getDBConnection();
 ?>
-
-
 
 <!DOCTYPE html>
 
@@ -65,48 +63,50 @@ $conn = getDBConnection();
             </nav>
         </header>
 
-<div class="main">
-        <h2>Most Engaged Buyer Report</h2> <br> <br> 
-      
-</div>
-<div class="buyer_div">
+        <div class="main">
+                <h2>Most Engaged Buyer Report</h2> <br> <br>
+        </div>
+        <div class="buyer_div">
 
-<img class="profile" src="/carRodioAssignment/img/profile_logo.png" alt="">
+            <img class="profile" src="/carRodioAssignment/img/profile_logo.png" alt="">
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-0lax"> Buyer Email</th>
+                        <th class="tg-0lax"> Buyer name</th>
+                        <th class="tg-0lax"> Buyer address</th>
+                        <th class="tg-0lax"> Contact Number</th>
+                        <th class="tg-0lax">  Number of Logins </th>
+                        <th class="tg-0lax">  Number of Comments  </th>
+                        <th class="tg-0lax">  Number of Advertisement Views  </th>
+                        <th class="tg-0lax">  Total Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $query1 = "SELECT email,uname,address,cno,logins,comments,pviews,(pviews*0.3+comments*0.5+logins*0.1) AS points FROM `user` ORDER BY points DESC LIMIT 10";
+                        $get1 = $conn->query($query1);
+                        while ($rows1 = $get1->fetch_assoc()) {?>
 
-<?php
-                    $Email='remonkavi@gmail.com';
 
-                    $query1 = "SELECT * FROM users WHERE id=7";
-                    $get1 = $conn->query($query1);
-                    while ($rows1 = $get1->fetch_assoc()) {?>
-        <table class="tg">
-<thead>
-  <tr>
-  <th class="tg-0lax"> Buyer Email</th>
-    <th class="tg-0lax"> Buyer name</th>
-    <th class="tg-0lax"> Buyer address</th>
-    <th class="tg-0lax"> Contact Number</th>
-    <td class="tg-0lax">  Number of sessions  </td>
-    
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0lax">  <?php echo $rows1["email"];?>    </td>
-    <td class="tg-0lax">   <?php echo $rows1["uname"];?>   </td>
-    <td class="tg-0lax">  <?php echo $rows1["address"];?>    </td>
-    <td class="tg-0lax">  <?php echo $rows1["cno"];?>    </td>
-    <td class="tg-0lax">  <?php echo 18;?>    </td>
+                    <tr>
+                        <td class="tg-0lax">  <?php echo $rows1["email"]; ?>    </td>
+                        <td class="tg-0lax">   <?php echo $rows1["uname"]; ?>   </td>
+                        <td class="tg-0lax">  <?php echo $rows1["address"]; ?>    </td>
+                        <td class="tg-0lax">  <?php echo $rows1["cno"]; ?>    </td>
+                        <td class="tg-0lax">  <?php echo $rows1["logins"]; ?>    </td>
+                        <td class="tg-0lax">  <?php echo $rows1["comments"]; ?>    </td>
+                        <td class="tg-0lax">  <?php echo $rows1["pviews"]; ?>    </td>
+                        <td class="tg-0lax">  <?php echo $rows1["points"]; ?>    </td>
 
-  </tr>
-</tbody>
-</table>
+                    </tr>
 
-<?php }?>
-  
+                    <?php }?>
+                </tbody>
+            </table>
 
-</div>
-<a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
+        </div>
+        <a href="generatereport.php"  >  <input type="button" value="Back" class="button" name="back" /> </a>
 
 
     </body>

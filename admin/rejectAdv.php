@@ -1,7 +1,7 @@
 <?php
+    session_start();
     require_once '../connection.php';
     $conn = getDBConnection();
-    session_start();
    
     if(!isset($_GET["vid"])){
         header('Location: http://localhost/carRodioAssignment/admin/verifyadd.php');

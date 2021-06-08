@@ -3,7 +3,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	background-color: #4c646c!important;
+	background-color: #4c646c;
   }
 
 div .logo{
@@ -57,7 +57,7 @@ header .navbar {
 .background-header .navbar-nav .nav-link.active,
 .background-header .navbar-nav .nav-link.show,
 .background-header .navbar-nav .show>.nav-link {
-	color: #f33f3f!important;
+	color: #0ab9b1!important;
 }
 .navbar .navbar-brand {
 	float: 	left;
@@ -112,7 +112,7 @@ header .navbar {
 }
 .navbar .navbar-toggler {
 	border-color: rgba(255, 255, 255, 0.281);
-	background-color: #fff;	
+	background-color: #fff!important;	
 	height: 36px;
 	outline: none;
 	border-radius: 0px;
@@ -122,7 +122,7 @@ header .navbar {
 }
 .navbar .navbar-toggler-icon:after {
 	content: '\f0c9';
-	color: #f33f3f;
+	color: #0ab9b1;
 	font-size: 18px;
 	line-height: 26px;
 	font-family: 'FontAwesome';
@@ -290,11 +290,11 @@ table{
   /*image slideshow in card view*/
 
   * {box-sizing: border-box}
-body {
+/* body {
 	font-family: Verdana, sans-serif; 
 	margin:0;
 	background-color: #c2c1c1;
-}
+} */
 
 .mySlides {display: none}
 img {vertical-align: middle}

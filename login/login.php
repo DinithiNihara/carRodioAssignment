@@ -9,11 +9,9 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
     $uemail=$_POST['eml'];
     $upwd=$_POST['pwd'];
 
-
-    $sql="SELECT email,password from user where email='$uemail' AND 
+    $sql="SELECT * from user where email='$uemail' AND 
     password='$upwd' limit 1";
-    
-    
+      
     $result=$conn->query($sql);
 
     if($result && mysqli_num_rows($result)>0)
@@ -23,7 +21,10 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"
         if($row['email'] == $uemail
         && $row['password'] == $upwd)
         {
+            $sql="UPDATE user SET logins=logins+1 WHERE email='$uemail'";
+            $conn->query($sql);
             $_SESSION['email']=$uemail;
+            $_SESSION['uname']=$row['uname'];
             echo "(<SCRIPT LANGUAGE='JavaScript'>
             window.alert('You have successfully logged in.')
             window.location.href='/carRodioAssignment/homepg.php';

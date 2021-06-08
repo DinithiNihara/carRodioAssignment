@@ -1,14 +1,7 @@
 <?php
 session_start();
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "carrodio1";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once '../connection.php';
+$conn = getDBConnection();
 
 if(isset($_POST["contact"])){
     //store posted values in the session variables
@@ -45,22 +38,28 @@ if(isset($_POST["submit"])){
     $mail->SMTPSecure = 'tls';   
 
     $mail->Subject = "Form submission";
-    $mail->Body = $name . " from " . $location . " sent the following:" . "\n\n" .
-     $msg. "\n\n mobile:".$mobile ."\n\n email:".$email;
+    $mail->Body = $name . " from " . $location . " sent the following:" . "\n\n" . $msg. "\n\n mobile:".$mobile ."\n\n email:".$email;
    
         if(!$mail->send()) 
-        {            echo "Mailer Error: " . $mail->ErrorInfo;} 
+        {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } 
         else 
-        {            echo '<script>alert("Message has been sent successfully, 
-            seller will contact you shortly.")</script>'; }
+        {
+            echo '<script>alert("Message has been sent successfully, seller will contact you shortly.")</script>';
+        }
+
         $date=date("Y/m/d");
+
         $sql ="INSERT INTO contacthistory(bname,bloc,bemail,bmob) VALUES 
         ('$name','$location','$email','$mobile')";
+
         if($conn->query($sql)===TRUE){
-// echo "Buyer information stored successfully";
+           // echo "Buyer information stored successfully";
         }else{
             echo "Error: ".$sql."<br>".$conn->error;
         }
+
     // use header('Location: thank_you.php'); to redirect to another page.
     }
 

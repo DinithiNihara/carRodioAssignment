@@ -1,6 +1,6 @@
 <?php 
-//include("../connection.php");
 session_start();
+require_once '../connection.php';
 $errors ='';
 
 
@@ -9,18 +9,7 @@ if(isset($_POST['submit'])=='send'&& isset($_POST['eml']))
     $email=$_POST['eml'];
     $_SESSION['email'] = $email;
     
-    $server="localhost";
-    $user="root";
-    $password="";
-    $dbname="carrodio1";
-    
-    $conn = new mysqli($server,$user,$password,$dbname);
-    
-    if($conn->connect_error){
-        die("Connection failed:".$conn->connect_error);
-    }else{
-        // echo"Connected successfully";
-    }
+    $conn = getDBConnection();
 
     $query = mysqli_query($conn,"SELECT * FROM user WHERE email='$email'");
     

@@ -1,6 +1,7 @@
 <?php
-
-require_once("connection.php");
+session_start();
+require_once '../connection.php';
+$con = getDBConnection();
 
 if(isset($_POST['update']))
 {

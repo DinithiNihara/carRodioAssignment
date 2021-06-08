@@ -1,6 +1,8 @@
 <?php
+session_start();
+require_once '../connection.php';
+$con = getDBConnection();
 
-require_once("connection.php");
 $UserID = $_GET['GetID']; 
 $email = $_GET['GetEmail'];
 $query = "select * from user where email='".$email."'";

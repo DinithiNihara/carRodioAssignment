@@ -1,15 +1,7 @@
 <?php
 session_start();
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "carrodio1";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require_once '../connection.php';
+$conn = getDBConnection();
 
 if(isset($_POST["next"])){
     //store posted values in the session variables
@@ -46,10 +38,10 @@ if(isset($_POST["submit"])){
     
 
     $sql ="INSERT INTO vehicle(manufacturer,model,modelYr,vCondition,color,bodyType,fuelType,
-    regYr,engCapacity,transmission,mileage,sname,scno,semail,sloc,price,addDetails) VALUES 
+    regYr,engCapacity,transmission,mileage,sname,scno,semail,sloc,price,addDetails,views) VALUES 
     ('$manu_content','$mod_content','$modYr_content','$con_content','$col_content','$bod_content',
     '$fuel_content','$regYr_content','$eng_content','$trans_content','$mil_content','$sname',
-    '$scno','$semail','$sloc','$price','$adDetails')";
+    '$scno','$semail','$sloc','$price','$adDetails',0)";
 
     if($conn->query($sql)===TRUE){
         echo "(<SCRIPT LANGUAGE='JavaScript'>

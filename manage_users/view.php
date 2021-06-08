@@ -1,6 +1,8 @@
  <?php
+  session_start();
+  require_once '../connection.php';
+  $con = getDBConnection();
   
-  require_once("connection.php");
   $query = "select * from user";
   $result = mysqli_query($con,$query);
  ?>

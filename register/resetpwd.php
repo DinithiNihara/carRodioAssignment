@@ -1,9 +1,9 @@
 <?php
-include("../connection.php");
 session_start();
+require_once '../connection.php';
+$conn = getDBConnection();
 
 $email = $_SESSION['email'];
-var_dump($email);
 
 if(isset($_POST['npwd'])){
 

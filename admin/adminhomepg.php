@@ -1,9 +1,6 @@
+<!DOCTYPE html>
 
-<body>
-
-    <!DOCTYPE html>
-
-    <html lang="en">
+<html lang="en">
 
     <head>
 
@@ -61,21 +58,20 @@
             </nav>
         </header>
 
-<div class="main">
-        <h2>ADMIN HOME PAGE</h2> <br> <br> 
+        <div class="main">
+            <h2>ADMIN HOME PAGE</h2> <br> <br>
 
-        <a href="verifyadd.php"  ><input type="button" class="button" value="Verify Advertisement" name="verify" /> </a> <br> <br>
-        <a href="../manage_users/view.php"><input type="button" class="button" value="Manage Users" name="manage" /> </a> <br> <br>   
-        <a href="generatereport.php"><input type="button" class="button" value="Generate Reports" name="genreport" /> </a> <br> <br>
-</div>
- 
-
+            <a href="verifyadd.php"  ><input type="button" class="button" value="Verify Advertisement" name="verify" /> </a> <br> <br>
+            <a href="../manage_users/view.php"><input type="button" class="button" value="Manage Users" name="manage" /> </a> <br> <br>
+            <a href="generatereport.php"><input type="button" class="button" value="Generate Reports" name="genreport" /> </a> <br> <br>
+        </div>
 
 
 
 
 
-    </body>
 
-    </html>
 
+</body>
+
+</html>

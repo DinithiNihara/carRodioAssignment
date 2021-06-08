@@ -1,14 +1,7 @@
 <?php
 session_start();
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "carrodio1";
-
-$conn = new mysqli($server, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once '../connection.php';
+$conn = getDBConnection();
 
 if(isset($_POST["submit"])){
     $sh = $_POST["search"];
@@ -59,12 +52,10 @@ if(isset($_POST["submit"])){
 
     <!-- Bootstrap CSS -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/search.css" rel="stylesheet">
 
-    
     <link href="../css/homepg.css" rel="stylesheet">
-   
-   
+    <link href="../css/search.css" rel="stylesheet">
+    <link href="../css/sellpg.css" rel="stylesheet">
 
     <style>
     table, th, td {
@@ -125,28 +116,6 @@ if(isset($_POST["submit"])){
             <input type="submit" name="submit">
         </form>
     </div>
-<table class="search_table">
-<tr>
-    <td> gf</td>
-    <td>sfe </td>
-</tr>
-<tr>
-    <td>vsd </td>
-    <td>svd </td>
-</tr>
-
-
-</table>
-
-
-<div class="parent">
-    <div> gh </div>
-    <div> gh </div>
-    <div> gh </div>
-    <div> gh </div>
-    <div> gh </div>
-    <div> gh </div>
-</div>
 
 
 
