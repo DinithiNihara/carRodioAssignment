@@ -1,7 +1,7 @@
  <?php
   
   require_once("connection.php");
-  $query = "select * from users";
+  $query = "select * from user";
   $result = mysqli_query($con,$query);
  ?>
 
@@ -76,13 +76,13 @@
           <div class="card mt-5">
             <table class = "table table-bordered"> 
                <tr>
-                 <td>User ID </td>
+                
                  <td>Email </td>
                  <td>Username </td>
                  <td>Address </td>
                  <td>Contact Number </td>
                  <td> Edit </td>
-                 <td> </td>
+                
                  <td> Delete </td>
 
                </tr>
@@ -90,7 +90,7 @@
                <?php
 
                     while($row=mysqli_fetch_assoc($result))
-                    {   $UserID = $row['id'];
+                    {   
                         $UserEmail = $row['email'];
                         $UserName = $row['uname'];
                         $UserAddress = $row['address'];
@@ -101,15 +101,15 @@
                ?>
 
                      <tr>
-                        <td><?php echo $UserID ?></td> 
+                        
                         <td><?php echo $UserEmail ?></td> 
                         <td><?php echo $UserName ?></td>
                         <td><?php echo $UserAddress ?></td>
                         <td><?php echo $UserC ?></td>
 
                         
-                        <td><a href="edit.php?GetID=<?php echo $UserID ?>">Edit</a><td>
-                        <td><a href="delete.php?Del=<?php echo $UserID ?>">Delete</a><td>
+                        <td><a href="edit.php?GetEmail=<?php echo $UserEmail ?>">Edit</a></td>
+                        <td><a href="delete.php?Del=<?php echo $UserEmail ?>">Delete</a></td>
                     <tr> 
 
                     

@@ -6,8 +6,8 @@
    if(isset($_GET['Del']))
    {
 
-    $UserID =$_GET['Del'];
-    $query = "delete from users where id = '".$UserID."'";
+    $UserEmail =$_GET['Del'];
+    $query = "delete from user where email= '".$UserEmail."'";
     $result =  mysqli_query($con,$query);
 
     if($result)

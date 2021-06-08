@@ -140,9 +140,19 @@ body {
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
+  
+
 }
 
+.num_add{
+  background-color:rgba(1, 16, 26, 0.438);
+  height: 1300px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
 .buyer_div{
   background-color:rgba(1, 16, 26, 0.575);
   height: 800px;

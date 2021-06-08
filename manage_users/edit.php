@@ -1,13 +1,14 @@
 <?php
 
 require_once("connection.php");
-$UserID = $_GET['GetID'];
-$query = "select * from users where id='".$UserID."'";
+$UserID = $_GET['GetID']; 
+$email = $_GET['GetEmail'];
+$query = "select * from user where email='".$email."'";
 $result = mysqli_query($con,$query);
 
 while($row=mysqli_fetch_assoc($result))
 {
-    $UserID = $row['id'];
+    
     $UserEmail = $row['email'];
     $UserName = $row['uname'];
     $UserAddress = $row['address'];
@@ -35,8 +36,8 @@ while($row=mysqli_fetch_assoc($result))
             </div>
             <div class="card-body">
 
-            <form action="update.php?ID=<?php echo $UserID ?>" method="post">
-                <input type="text" class="form-control mb-2" placeholder="User id" name="id" value="<?php echo $UserID ?>" >
+            <form action="update.php?email=<?php echo $email ?>" method="post">
+                
                 <input type="text" class="form-control mb-2" placeholder="User Email" name="email" value="<?php echo $UserEmail ?>">
                 <input type="text" class="form-control mb-2" placeholder="User Name" name="uname" value="<?php echo $UserName ?>">
                 <input type="text" class="form-control mb-2" placeholder="User address" name="address" value="<?php echo $UserAddress ?>">
