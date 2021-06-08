@@ -3,7 +3,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	background-color: #4c646c;
+	background-color: #4c646c!important;
   }
 
 div .logo{
@@ -57,7 +57,7 @@ header .navbar {
 .background-header .navbar-nav .nav-link.active,
 .background-header .navbar-nav .nav-link.show,
 .background-header .navbar-nav .show>.nav-link {
-	color: #0ab9b1!important;
+	color: #f33f3f!important;
 }
 .navbar .navbar-brand {
 	float: 	left;
@@ -112,7 +112,7 @@ header .navbar {
 }
 .navbar .navbar-toggler {
 	border-color: rgba(255, 255, 255, 0.281);
-	background-color: #fff!important;	
+	background-color: #fff;	
 	height: 36px;
 	outline: none;
 	border-radius: 0px;
@@ -122,7 +122,7 @@ header .navbar {
 }
 .navbar .navbar-toggler-icon:after {
 	content: '\f0c9';
-	color: #0ab9b1;
+	color: #f33f3f;
 	font-size: 18px;
 	line-height: 26px;
 	font-family: 'FontAwesome';

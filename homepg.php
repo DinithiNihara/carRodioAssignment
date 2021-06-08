@@ -2,7 +2,7 @@
 session_start();
 $server = "localhost";
 $user = "root";
-$password = "1234";
+$password = "";
 $dbname = "carrodio1";
 
 $conn = new mysqli($server, $user, $password, $dbname);
@@ -38,8 +38,6 @@ if ($conn->connect_error) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
-    <script src="https://kit.fontawesome.com/bb52f0e357.js" crossorigin="anonymous"></script>
 
     <title>Home</title>
 
